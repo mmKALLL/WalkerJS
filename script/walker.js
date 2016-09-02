@@ -40,7 +40,7 @@
 
 
   var messagebox = {
-    elem: document.getElementById("messagebox"),
+    elem: document.getElementById("messageBox"),
     pushMessage: function(string) { this.elem.innerHTML = string + "<br>" + this.elem.innerHTML; },
   }
 
