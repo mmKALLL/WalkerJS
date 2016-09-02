@@ -1,6 +1,18 @@
 "use strict";
 
+
+/********************
+ * Walker - a game about walking the long road of life.
+ * Author: Esa Koskinen (mmKALLL)
+ *
+ * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
+ ********************/
 (function() {
+
+  // TODO: Add timer system for actions.
+  // TODO: Debug the player's movement.
+  // TODO: Figure out a way to calculate total without a function call parentheses.
+  // TODO: Add some interesting messages.
 
   var player = {
     forwardSteps: 0,
