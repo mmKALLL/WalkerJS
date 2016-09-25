@@ -1,0 +1,17 @@
+{
+  "name": "walkerJS",
+  "version": "0.0.1",
+
+
+  "eslintConfig": {
+
+    "env": {
+      "browser": true
+    },
+
+    "rules": {
+      "quotes": ["warn", "double"],
+      "semi": "warn"
+    }
+  }
+}

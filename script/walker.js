@@ -1,13 +1,13 @@
 "use strict";
 
 
-/********************
+/* *******************
  * Walker - a game about walking the long road of life.
  * Author: Esa Koskinen (mmKALLL)
  *
  * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
- ********************/
-(function() {
+ * *******************/
+(function () {
 
   // TODO: Add timer system for actions.
   // TODO: Debug the player's movement.
@@ -42,7 +42,7 @@
   var messagebox = {
     elem: document.getElementById("messageBox"),
     pushMessage: function(string) { this.elem.innerHTML = string + "<br>" + this.elem.innerHTML; },
-  }
+  };
 
 
   function updateStatus() {
