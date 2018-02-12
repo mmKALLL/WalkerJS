@@ -109,17 +109,12 @@
     pushMessage: function(string) { this.elem.innerHTML = string + "<br>" + this.elem.innerHTML; },
   };
 
-  function updateAll() {
-    updateStatus();
-    updateMoodEffects();
-  }
 
   function updateStatus() {
     var elem = document.getElementById("statusArea");
     elem.innerHTML =  "You have taken " + player.totalSteps + " steps.<br>" +
                       "Your current position is " + player.position + ".<br>" +
                       "Your current mood is " + player.mood + ".<br>";
-
   }
   
   function updateMoodEffects() {
@@ -150,7 +145,8 @@
     elem.style.setProperty("--mood-background-color", "white");
     elem.style.setProperty("--mood-text-color", "black");
     
-    updateAll();
+    updateStatus();
+    window.setTimeout(updateMoodEffects, 100); // Allow background transition using timeout.
   }
   
   startNewGame();
