@@ -75,6 +75,7 @@
         messagebox.pushMessage("Changed moodBlue by " + amount);
       } else {
         player.mood += amount;
+        player.mood = Math.min(155, Math.max(player.mood, 0));
         messagebox.pushMessage("Changed mood by " + amount);
       }
       updateStatus();
