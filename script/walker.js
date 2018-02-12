@@ -23,7 +23,7 @@
     get totalSteps() { return this.forwardSteps + this.backwardSteps; },
     get position() { return this.forwardSteps - this.backwardSteps; },
     
-    mood: 20, /* 0 to 155, then individual moods from 0 to 100 */
+    mood: 20, /* 0 to 155; individual moods 0 if mood < 100, then from 0 to 100 */
     moodRed: 0,   // represents passion, love, bonds
     moodGreen: 0, // represents optimism, wellbeing, altruism
     moodBlue: 0,  // represents rationality, thinking, calmness
@@ -33,7 +33,7 @@
     get moodColor() { return rgb(player.moodColorR, player.moodColorG, player.moodColorB); },
     get moodTextColor() {
       if (constants.TEXT_COLOR_SWITCH_THRESHOLD >
-          (player.moodColorR) ) {
+            colorBrightness(player.moodColorR, player.moodColorG, player.moodColorB)) {
         return "white";
       } else {
         return "black";
@@ -57,16 +57,32 @@
       updateStatus();
     },
     
-    changeMood: function(amount) {
-      player.mood += amount;
-      messagebox.pushMessage("Changed mood by " + amount);
+    // Calling with just amount param adjusts base mood. Color assumed to be a string, one of "n" (neutral), "r", "g" or "b".
+    changeMood: function(amount, colorLetter) {
+      var color = colorLetter ? colorLetter.toString().toLowerCase() : "n";
+      if (color === "r") {
+        player.moodRed += amount;
+        player.moodRed = Math.min(100, Math.max(player.moodRed, 0));
+        messagebox.pushMessage("Changed moodRed by " + amount);
+      } else if (color === "g") {
+        player.moodGreen += amount;
+        player.moodGreen = Math.min(100, Math.max(player.moodRed, 0));
+        messagebox.pushMessage("Changed moodGreen by " + amount);
+      } else if (color === "b") {
+        player.moodBlue += amount;
+        player.moodBlue = Math.min(100, Math.max(player.moodRed, 0));
+        messagebox.pushMessage("Changed moodBlue by " + amount);
+      } else {
+        player.mood += amount;
+        messagebox.pushMessage("Changed mood by " + amount);
+      }
       updateStatus();
       updateMoodEffects();
     },
     
-    changeMoodFunc: function(amount) {
+    changeMoodFunc: function(amount, color) {
       return function() {
-        player.changeMood(amount);
+        player.changeMood(amount, color);
       };
     }
 
@@ -109,8 +125,16 @@
   function startNewGame() {
     document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
     document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
-    document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(10));
-    document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-10));
+    
+    document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(30));
+    document.getElementById("increaseMoodButtonR").addEventListener("click", player.changeMoodFunc(30, "r"));
+    document.getElementById("increaseMoodButtonG").addEventListener("click", player.changeMoodFunc(30, "g"));
+    document.getElementById("increaseMoodButtonB").addEventListener("click", player.changeMoodFunc(30, "b"));
+    
+    document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-30));
+    document.getElementById("decreaseMoodButtonR").addEventListener("click", player.changeMoodFunc(-30, "r"));
+    document.getElementById("decreaseMoodButtonG").addEventListener("click", player.changeMoodFunc(-30, "g"));
+    document.getElementById("decreaseMoodButtonB").addEventListener("click", player.changeMoodFunc(-30, "b"));
     
     updateStatus();
   }
