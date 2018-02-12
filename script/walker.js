@@ -1,6 +1,5 @@
 "use strict";
 
-
 /* *******************
  * Walker - a game about walking the long road of life.
  * Author: Esa Koskinen (mmKALLL)
@@ -9,7 +8,7 @@
  * *******************/
 (function () {
 
-  // TODO: Add timer system for actions.
+  // TODO: Add timer system for action cooldown.
   // TODO: Debug the player's movement.
   // TODO: Figure out a way to calculate total without a function call parentheses.
   // TODO: Add some interesting messages.
@@ -19,6 +18,18 @@
     backwardSteps: 0,
     get totalSteps() { return this.forwardSteps + this.backwardSteps; },
     get position() { return this.forwardSteps - this.backwardSteps; },
+    
+    mood: 20, /* 0 to 155, then individual moods from 0 to 100 */
+    moodLove: 0,  // represents Red
+    moodHelp: 0,  // represents Green
+    moodThink: 0, // represents Blue
+    get moodColor() {
+      return rgb(
+          player.mood + player.moodLove,
+          player.mood + player.moodHelp,
+          player.mood + player.moodThink
+      );
+    },
 
     stepForward: function() {
       player.forwardSteps += 1;
@@ -32,12 +43,33 @@
       player.backwardSteps += 1;
       if (player.backwardSteps <= 1)
         messagebox.pushMessage("You took a step back!");
-      else messagebox.pushMessage("You have taken a step back " + player.backwardSteps + " times!");
+      else
+        messagebox.pushMessage("You have taken a step back " + player.backwardSteps + " times!");
       updateStatus();
     },
+    
+    changeMood: function(amount) {
+      player.mood += amount;
+      messagebox.pushMessage("Changed mood by " + amount);
+      updateStatus();
+      updateMoodEffects();
+    },
+    
+    changeMoodFunc: function(amount) {
+      return function() {
+        player.changeMood(amount);
+      };
+    }
 
   };
 
+  // Returns a CSS parseable RGB color.
+  function rgb(r, g, b){
+    r = Math.floor(r);
+    g = Math.floor(g);
+    b = Math.floor(b);
+    return ["rgb(", r, ",", g, ",", b, ")"].join("");
+  }
 
   var messagebox = {
     elem: document.getElementById("messageBox"),
@@ -48,12 +80,24 @@
   function updateStatus() {
     var elem = document.getElementById("statusArea");
     elem.innerHTML =  "You have taken " + player.totalSteps + " steps.<br>" +
-                      "Your current position is " + player.position + ".<br>";
+                      "Your current position is " + player.position + ".<br>" +
+                      "Your current mood is " + player.mood + ".<br>";
 
   }
+  
+  function updateMoodEffects() {
+    document.documentElement.style.setProperty("--mood-background-color", player.moodColor);
+  }
 
-
-  document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
-  document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
-
+  function startNewGame() {
+    document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
+    document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
+    document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(10));
+    document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-10));
+    
+    updateStatus();
+  }
+  
+  startNewGame();
+  
 })();
