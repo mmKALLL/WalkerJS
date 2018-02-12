@@ -9,14 +9,17 @@
  * Copyright (c) 2017-2018 Esa Koskinen
  * ********************************************************/
 (function () {
-
+  
+  // TODO: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
   // TODO: Add timer system for action cooldown.
   // TODO: Debug the player's movement.
   // TODO: Figure out a way to calculate total without a function call parentheses.
   // TODO: Add some interesting messages.
+  // TODO: Add message overflow hidden (no scrollbars), fadeout near bottom, text color param
+  // TODO: Add text bunching ("Took step! (x19)" -> "Took step! (x20)" when same message is repeated.)
 
   var constants = {
-    TEXT_COLOR_SWITCH_THRESHOLD: 137, // Color text based on HSP space Perceived Brightness
+    TEXT_COLOR_SWITCH_THRESHOLD: 137, // Text color based on HSP space Perceived Brightness
   };
 
   var player = {
