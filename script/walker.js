@@ -52,7 +52,8 @@
 
   }
 
-
+  updateStatus();
+  
   document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
   document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
 
