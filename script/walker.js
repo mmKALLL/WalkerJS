@@ -13,6 +13,10 @@
   // TODO: Figure out a way to calculate total without a function call parentheses.
   // TODO: Add some interesting messages.
 
+  var constants = {
+    TEXT_COLOR_SWITCH_THRESHOLD: 140,
+  };
+
   var player = {
     forwardSteps: 0,
     backwardSteps: 0,
@@ -20,15 +24,20 @@
     get position() { return this.forwardSteps - this.backwardSteps; },
     
     mood: 20, /* 0 to 155, then individual moods from 0 to 100 */
-    moodLove: 0,  // represents Red
-    moodHelp: 0,  // represents Green
-    moodThink: 0, // represents Blue
-    get moodColor() {
-      return rgb(
-          player.mood + player.moodLove,
-          player.mood + player.moodHelp,
-          player.mood + player.moodThink
-      );
+    moodRed: 0,   // represents passion, love, bonds
+    moodGreen: 0, // represents optimism, wellbeing, altruism
+    moodBlue: 0,  // represents rationality, thinking, calmness
+    get moodColorR() { return player.mood + player.moodRed; },
+    get moodColorG() { return player.mood + player.moodGreen; },
+    get moodColorB() { return player.mood + player.moodBlue; },
+    get moodColor() { return rgb(player.moodColorR, player.moodColorG, player.moodColorB); },
+    get moodTextColor() {
+      if (constants.TEXT_COLOR_SWITCH_THRESHOLD >
+          (player.moodColorR) ) {
+        return "white";
+      } else {
+        return "black";
+      }
     },
 
     stepForward: function() {
@@ -86,7 +95,9 @@
   }
   
   function updateMoodEffects() {
-    document.documentElement.style.setProperty("--mood-background-color", player.moodColor);
+    var elem = document.documentElement;
+    elem.style.setProperty("--mood-background-color", player.moodColor);
+    elem.style.setProperty("--mood-text-color", player.moodTextColor);
   }
 
   function startNewGame() {
