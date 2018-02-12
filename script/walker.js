@@ -16,7 +16,10 @@
   var player = {
     forwardSteps: 0,
     backwardSteps: 0,
-    mood: -100,
+    mood: 20, /* 0 to 155, then individual moods from 0 to 100 */
+    moodLove: 0,  // represents Red
+    moodHelp: 0,  // represents Green
+    moodThink: 0, // represents Blue
     get totalSteps() { return this.forwardSteps + this.backwardSteps; },
     get position() { return this.forwardSteps - this.backwardSteps; },
 
@@ -41,6 +44,7 @@
       player.mood += amount;
       messagebox.pushMessage("Changed mood by " + amount);
       updateStatus();
+      updateMoodEffects();
     },
     
     changeMoodFunc: function(amount) {
@@ -67,12 +71,20 @@
                       "Your current mood is " + player.mood + ".<br>";
 
   }
-
-  updateStatus();
   
-  document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
-  document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
-  document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(10));
-  document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-10));
+  function updateMoodEffects() {
+    document.documentElement.style.setProperty("--mood-background-color", player.mood());
+  }
 
+  function startNewGame() {
+    document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
+    document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
+    document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(10));
+    document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-10));
+    
+    updateStatus();
+  }
+  
+  startNewGame();
+  
 })();

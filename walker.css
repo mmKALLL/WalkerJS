@@ -4,6 +4,12 @@
 }
 
 body {
-  .background-color: var(--mood-background-color, white);
-  .color: var(--mood-text-color, black);
+  background-color: var(--mood-background-color);
+  color: var(--mood-text-color);
+}
+
+button {
+  background-color: Transparent;
+  color: var(--mood-text-color);
+  border: solid var(--mood-text-color);
 }
