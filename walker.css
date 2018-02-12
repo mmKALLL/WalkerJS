@@ -1,12 +1,14 @@
 :root {
   --mood-background-color: white;
   --mood-text-color: black;
+  /* Maybe add transitions as global var? */
+  /* But it is a nice effect when buttons flash and others adjust...  */
 }
 
 body {
   background-color: var(--mood-background-color);
   color: var(--mood-text-color);
-  transition: background-color 1200ms ease-in-out, color 600ms ease-out;
+  transition: background-color 2000ms ease-in-out, color 600ms ease-in-out;
 }
 
 button {
@@ -18,4 +20,5 @@ button {
   height: 40px;
   width: 160px;
   /*transform: scale(1);*/
+  transition: color 10ms;
 }

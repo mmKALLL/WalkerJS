@@ -14,7 +14,7 @@
   // TODO: Add some interesting messages.
 
   var constants = {
-    TEXT_COLOR_SWITCH_THRESHOLD: 140,
+    TEXT_COLOR_SWITCH_THRESHOLD: 137, // Color text based on HSP space Perceived Brightness
   };
 
   var player = {
@@ -78,6 +78,12 @@
     g = Math.floor(g);
     b = Math.floor(b);
     return ["rgb(", r, ",", g, ",", b, ")"].join("");
+  }
+  
+  // Return brightness of color in the HSP space; range 0-255.
+  // http://alienryderflex.com/hsp.html
+  function colorBrightness(r, g, b) {
+    return Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
   }
 
   var messagebox = {
