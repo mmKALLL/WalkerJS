@@ -8,7 +8,7 @@
 body {
   background-color: var(--mood-background-color);
   color: var(--mood-text-color);
-  transition: background-color 2000ms ease-in-out, color 600ms ease-in-out;
+  transition: background-color 2800ms cubic-bezier(0.39, 0.575, 0.565, 1), color 600ms ease-out;
 }
 
 button {
