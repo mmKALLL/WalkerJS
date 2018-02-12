@@ -1,6 +1,5 @@
 "use strict";
 
-
 /* *******************
  * Walker - a game about walking the long road of life.
  * Author: Esa Koskinen (mmKALLL)
@@ -9,7 +8,7 @@
  * *******************/
 (function () {
 
-  // TODO: Add timer system for actions.
+  // TODO: Add timer system for action cooldown.
   // TODO: Debug the player's movement.
   // TODO: Figure out a way to calculate total without a function call parentheses.
   // TODO: Add some interesting messages.
@@ -17,6 +16,7 @@
   var player = {
     forwardSteps: 0,
     backwardSteps: 0,
+    mood: -100,
     get totalSteps() { return this.forwardSteps + this.backwardSteps; },
     get position() { return this.forwardSteps - this.backwardSteps; },
 
@@ -32,9 +32,22 @@
       player.backwardSteps += 1;
       if (player.backwardSteps <= 1)
         messagebox.pushMessage("You took a step back!");
-      else messagebox.pushMessage("You have taken a step back " + player.backwardSteps + " times!");
+      else
+        messagebox.pushMessage("You have taken a step back " + player.backwardSteps + " times!");
       updateStatus();
     },
+    
+    changeMood: function(amount) {
+      player.mood += amount;
+      messagebox.pushMessage("Changed mood by " + amount);
+      updateStatus();
+    },
+    
+    changeMoodFunc: function(amount) {
+      return function() {
+        changeMood(amount);
+      };
+    }
 
   };
 
@@ -48,7 +61,8 @@
   function updateStatus() {
     var elem = document.getElementById("statusArea");
     elem.innerHTML =  "You have taken " + player.totalSteps + " steps.<br>" +
-                      "Your current position is " + player.position + ".<br>";
+                      "Your current position is " + player.position + ".<br>" +
+                      "Your current mood is " + player.mood + ".<br>";
 
   }
 
@@ -56,5 +70,7 @@
   
   document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
   document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
+  document.getElementById("stepBackwardButton").addEventListener("click", player.changeMoodFunc(10));
+  document.getElementById("stepBackwardButton").addEventListener("click", player.changeMoodFunc(-10));
 
 })();

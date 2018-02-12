@@ -1,1 +1,9 @@
- 
+:root {
+  --mood-background-color: white;
+  --mood-text-color: black;
+}
+
+body {
+  .background-color: var(--mood-background-color, white);
+  .color: var(--mood-text-color, black);
+}
