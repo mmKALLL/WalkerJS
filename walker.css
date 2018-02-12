@@ -19,6 +19,8 @@ button {
   margin: 10px 10px 10px 10px;
   height: 40px;
   width: 160px;
+  max-width: 60%;
+  max-height: auto;
   /*transform: scale(1);*/
   transition: color 10ms;
 }
@@ -27,8 +29,17 @@ button {
 #newGameButton {
   margin: auto;
   display: block;
+  margin-top: 10%;
 }
 
 #mainTitle {
+  padding-top: 15%;
+  margin: auto;
+  display: block;
   text-align: center;
+}
+
+img {
+  max-width: 60%;
+  height: auto;
 }

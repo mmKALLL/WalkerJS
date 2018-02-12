@@ -141,6 +141,10 @@
     document.getElementById("decreaseMoodButtonG").addEventListener("click", player.changeMoodFunc(-30, "g"));
     document.getElementById("decreaseMoodButtonB").addEventListener("click", player.changeMoodFunc(-30, "b"));
     
+    var elem = document.documentElement;
+    elem.style.setProperty("--mood-background-color", "white");
+    elem.style.setProperty("--mood-text-color", "black");
+    
     updateAll();
   }
   
