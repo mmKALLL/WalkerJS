@@ -66,11 +66,11 @@
         messagebox.pushMessage("Changed moodRed by " + amount);
       } else if (color === "g") {
         player.moodGreen += amount;
-        player.moodGreen = Math.min(100, Math.max(player.moodRed, 0));
+        player.moodGreen = Math.min(100, Math.max(player.moodGreen, 0));
         messagebox.pushMessage("Changed moodGreen by " + amount);
       } else if (color === "b") {
         player.moodBlue += amount;
-        player.moodBlue = Math.min(100, Math.max(player.moodRed, 0));
+        player.moodBlue = Math.min(100, Math.max(player.moodBlue, 0));
         messagebox.pushMessage("Changed moodBlue by " + amount);
       } else {
         player.mood += amount;
