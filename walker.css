@@ -29,13 +29,11 @@ button {
 #newGameButton {
   margin: auto;
   display: block;
-  margin-top: 10%;
+  margin-top: 10vh;
 }
 
 #mainTitle {
-  padding-top: 15%;
-  margin: auto;
-  display: block;
+  margin-top: 15vh;
   text-align: center;
 }
 
