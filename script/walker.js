@@ -11,7 +11,10 @@
 (function () {
   
   // TODO: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
-  // TODO: Add timer system for action cooldown.
+  // TODO: Experiment with different UI layouts and check responsiveness of having things of different sizes.
+  // TODO: Adjust button/div widths and margins based on screen width and height.
+  
+  // TODO: Add timer system for action cooldown, with button-background adjust.
   // TODO: Debug the player's movement.
   // TODO: Figure out a way to calculate total without a function call parentheses.
   // TODO: Add some interesting messages.

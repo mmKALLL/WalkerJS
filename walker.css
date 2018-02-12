@@ -16,7 +16,7 @@ button {
   color: var(--mood-text-color) !important;
   border: solid 1px var(--mood-text-color);
   outline: none;
-  margin: 10px 10px 10px 10px;
+  margin: 9px 7px 9px 6.5px; /* urdl; exactly 17px grid spacing on Chrome. */
   height: 40px;
   width: 160px;
   max-width: 60%;
