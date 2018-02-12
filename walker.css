@@ -39,7 +39,7 @@ button {
   text-align: center;
 }
 
-img {
+#mainTitle>img {
   max-width: 60%;
   height: auto;
 }
