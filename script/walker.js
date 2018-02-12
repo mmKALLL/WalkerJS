@@ -16,12 +16,20 @@
   var player = {
     forwardSteps: 0,
     backwardSteps: 0,
+    get totalSteps() { return this.forwardSteps + this.backwardSteps; },
+    get position() { return this.forwardSteps - this.backwardSteps; },
+    
     mood: 20, /* 0 to 155, then individual moods from 0 to 100 */
     moodLove: 0,  // represents Red
     moodHelp: 0,  // represents Green
     moodThink: 0, // represents Blue
-    get totalSteps() { return this.forwardSteps + this.backwardSteps; },
-    get position() { return this.forwardSteps - this.backwardSteps; },
+    get moodColor() {
+      return rgb(
+          player.mood + player.moodLove,
+          player.mood + player.moodHelp,
+          player.mood + player.moodThink
+      );
+    },
 
     stepForward: function() {
       player.forwardSteps += 1;
@@ -55,6 +63,13 @@
 
   };
 
+  // Returns a CSS parseable RGB color.
+  function rgb(r, g, b){
+    r = Math.floor(r);
+    g = Math.floor(g);
+    b = Math.floor(b);
+    return ["rgb(", r, ",", g, ",", b, ")"].join("");
+  }
 
   var messagebox = {
     elem: document.getElementById("messageBox"),
