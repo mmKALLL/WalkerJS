@@ -108,6 +108,10 @@
     pushMessage: function(string) { this.elem.innerHTML = string + "<br>" + this.elem.innerHTML; },
   };
 
+  function updateAll() {
+    updateStatus();
+    updateMoodEffects();
+  }
 
   function updateStatus() {
     var elem = document.getElementById("statusArea");
@@ -137,7 +141,7 @@
     document.getElementById("decreaseMoodButtonG").addEventListener("click", player.changeMoodFunc(-30, "g"));
     document.getElementById("decreaseMoodButtonB").addEventListener("click", player.changeMoodFunc(-30, "b"));
     
-    updateStatus();
+    updateAll();
   }
   
   startNewGame();
