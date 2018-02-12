@@ -1,11 +1,12 @@
 "use strict";
 
-/* *******************
- * Walker - a game about walking the long road of life.
+/* ********************************************************\
+ * Walker - Path to Darkness
+ * A game about walking the long road of life.
  * Author: Esa Koskinen (mmKALLL)
  *
  * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
- * *******************/
+ * ********************************************************/
 (function () {
 
   // TODO: Add timer system for action cooldown.

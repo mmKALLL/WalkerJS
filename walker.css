@@ -22,3 +22,13 @@ button {
   /*transform: scale(1);*/
   transition: color 10ms;
 }
+
+
+#newGameButton {
+  margin: auto;
+  display: block;
+}
+
+#maineTitle {
+  text-align: center;
+}
