@@ -6,6 +6,7 @@
  * Author: Esa Koskinen (mmKALLL)
  *
  * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
+ * Copyright (c) 2017-2018 Esa Koskinen
  * ********************************************************/
 (function () {
 
