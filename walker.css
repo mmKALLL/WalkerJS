@@ -11,5 +11,8 @@ body {
 button {
   background-color: Transparent;
   color: var(--mood-text-color);
-  border: solid var(--mood-text-color);
+  border: solid 0.9px var(--mood-text-color);
+  margin: 10px 10px 10px 10px;
+  height: 40px;
+  width: 160px;
 }

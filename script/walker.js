@@ -48,10 +48,8 @@
     },
     
     changeMoodFunc: function(amount) {
-      var param = amount;
       return function() {
-        console.log("Called");
-        player.changeMood(param);
+        player.changeMood(amount);
       };
     }
 
@@ -73,7 +71,7 @@
   }
   
   function updateMoodEffects() {
-    document.documentElement.style.setProperty("--mood-background-color", player.mood());
+    document.documentElement.style.setProperty("--mood-background-color", player.moodColor);
   }
 
   function startNewGame() {
