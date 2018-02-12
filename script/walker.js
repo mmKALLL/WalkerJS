@@ -44,8 +44,10 @@
     },
     
     changeMoodFunc: function(amount) {
+      var param = amount;
       return function() {
-        changeMood(amount);
+        console.log("Called");
+        player.changeMood(param);
       };
     }
 
@@ -70,7 +72,7 @@
   
   document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
   document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
-  document.getElementById("stepBackwardButton").addEventListener("click", player.changeMoodFunc(10));
-  document.getElementById("stepBackwardButton").addEventListener("click", player.changeMoodFunc(-10));
+  document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(10));
+  document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-10));
 
 })();
