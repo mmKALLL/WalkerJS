@@ -30,6 +30,10 @@ body {
   border: solid 5px var(--mood-text-color);
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 
 #newGameButton {
   margin: auto;

@@ -109,8 +109,13 @@
     },
     
     changeMoodFunc: function(amount, color) {
-      return function() {
-        player.changeMood(amount, color);
+      return function(event) {
+        console.log(event);
+        if (event.target.classList.contains("inactive")) {
+          console.log("lol no");
+        } else {
+          player.changeMood(amount, color);
+        }
       };
     }
 
