@@ -17,7 +17,7 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
 
 
 ## Roadmap
-
+```
 // FIXME: Remove temporary layout elements.
 // FIXME: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
 
@@ -47,3 +47,4 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
 // EXTEND: Full screen button.
 // EXTEND: Fade out buttons on cutscene/return to title.
 // EXTEND: Fade bg back to white when returning to the title screen.
+```
