@@ -19,7 +19,7 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
 ## Roadmap
 ```
 // FIXME: Remove temporary layout elements.
-// FIXME: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
+// FIXME: Prefix things with "wjs" namespace and move event handlersconstants/player/gamestate to separate files.
 
 // TODO: Experiment with different UI layouts and check responsiveness of having things of different sizes.
 // TODO: Adjust button/div widths and margins based on screen width and height.
