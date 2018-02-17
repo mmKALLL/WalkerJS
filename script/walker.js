@@ -10,20 +10,33 @@
  * ********************************************************/
 (function () {
   
-  // TODO: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
+  // FIXME: Remove temporary layout elements.
+  // FIXME: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
+  
   // TODO: Experiment with different UI layouts and check responsiveness of having things of different sizes.
   // TODO: Adjust button/div widths and margins based on screen width and height.
+  // TODO: Implement the basic controls and layout. (3 columns)
   
   // TODO: Add timer system for action cooldown, with button-background adjust.
   // TODO: Debug the player's movement.
-  // TODO: Figure out a way to calculate total without a function call parentheses.
+  // TODO: Figure out a way to calculate totalSteps without function call parentheses.
   // TODO: Add some interesting messages.
-  // TODO: Add message overflow hidden (no scrollbars), fadeout near bottom, text color param
+  // TODO: Add message div max size and disappearing messages, fadeout near bottom, message text color param.
   // TODO: Add text bunching ("Took step! (x19)" -> "Took step! (x20)" when same message is repeated.)
   
   // TODO: Saving and loading from localstorage.
+  // TODO: Implement the upgrade system (step back/forward, look back, look forward).
+  // TODO: Implement the energy system (running and walking cost energy, food/breaks/sleep restore it).
+  // TODO: Keep track of player inventory.
+  // TODO: Keep track of position, place items on map.
+  // TODO: Implement houses, towns, cities, and the Capital, as well as merchants and other random encounters.
+  // TODO: Cutscenes. Fade out .gameplay, fade in/out text that floats up or down.
+  // TODO: Control mood within cutscenes.
+  // TODO: Implement The Friend.
+  // TODO: Implement endings.
   
   // EXTEND: Export/import saves as strings.
+  // EXTEND: Full screen button.
   // EXTEND: Fade out buttons on cutscene/return to title.
   // EXTEND: Fade bg back to white when returning to the title screen.
 
