@@ -20,6 +20,12 @@
   // TODO: Add some interesting messages.
   // TODO: Add message overflow hidden (no scrollbars), fadeout near bottom, text color param
   // TODO: Add text bunching ("Took step! (x19)" -> "Took step! (x20)" when same message is repeated.)
+  
+  // TODO: Saving and loading from localstorage.
+  
+  // EXTEND: Export/import saves as strings.
+  // EXTEND: Fade out buttons on cutscene/return to title.
+  // EXTEND: Fade bg back to white when returning to the title screen.
 
   var constants = {
     TEXT_COLOR_SWITCH_THRESHOLD: 137, // Text color based on HSP space Perceived Brightness

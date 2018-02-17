@@ -11,7 +11,7 @@ body {
   transition: background-color 2800ms cubic-bezier(0.39, 0.575, 0.565, 1), color 600ms ease-out;
 }
 
-button {
+.button {
   background-color: Transparent;
   color: var(--mood-text-color) !important;
   border: solid 1px var(--mood-text-color);
@@ -24,6 +24,10 @@ button {
   max-height: auto;
   /*transform: scale(1);*/
   transition: color 10ms;
+}
+
+.button.ready {
+  border: solid 5px var(--mood-text-color);
 }
 
 
