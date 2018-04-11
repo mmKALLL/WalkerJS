@@ -24,7 +24,7 @@
   // TODO: Add message div max size and disappearing messages, fadeout near bottom, message text color param.
   // TODO: Add text bunching ("Took step! (x19)" -> "Took step! (x20)" when same message is repeated.)
   
-  // TODO: Saving and loading from localstorage.
+  // TODO: Saving and loading from localstorage. Handle in separate thread which calls message function when done.
   // TODO: Implement the upgrade system (step back/forward, look back, look forward).
   // TODO: Implement the energy system (running and walking cost energy, food/breaks/sleep restore it).
   // TODO: Keep track of player inventory.
