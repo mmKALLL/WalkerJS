@@ -26,6 +26,10 @@ body {
   transition: color 10ms;
 }
 
+.test-button {
+  /*visibility: hidden;*/
+}
+
 .button.ready {
   border: solid 3px var(--mood-text-color);
 }
