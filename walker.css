@@ -1,8 +1,8 @@
 :root {
   --mood-background-color: white;
-  --mood-text-color: black;
+  --mood-text-color: black;  /* TODO: Consider the use of softer colors, eg. #222 for text */
   /* Maybe add transitions as global var? */
-  /* But it is a nice effect when buttons flash and others adjust...  */
+  /* It is a nice effect when buttons flash and others adjust, there should be multiple transitions...  */
 }
 
 body {
@@ -11,18 +11,31 @@ body {
   transition: background-color 2800ms cubic-bezier(0.39, 0.575, 0.565, 1), color 600ms ease-out;
 }
 
-button {
+.button {
   background-color: Transparent;
   color: var(--mood-text-color) !important;
   border: solid 1px var(--mood-text-color);
   outline: none;
-  margin: 10px 10px 10px 10px;
+  overflow: visible; /* TODO: set to hidden in final version */
+  margin: 9px 7px 9px 6.5px; /* URDL; exactly 17px grid spacing on Chrome. */
   height: 40px;
   width: 160px;
   max-width: 60%;
   max-height: auto;
   /*transform: scale(1);*/
   transition: color 10ms;
+}
+
+.test-button {
+  /*visibility: hidden;*/
+}
+
+.button.ready {
+  border: solid 3px var(--mood-text-color);
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 

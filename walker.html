@@ -4,22 +4,56 @@
     <link rel="stylesheet" type="text/css" href="walker.css">
 </head>
 <body>
-    <div id="statusArea"></div>
-    <button id="stepForwardButton">Step forward</button><br>
-    <button id="stepBackwardButton">Step backward</button><br><br>
-    <button id="increaseMoodButton">Inc mood x30</button>
-    <button id="increaseMoodButtonR">Inc moodR x30</button>
-    <button id="increaseMoodButtonG">Inc moodG x30</button>
-    <button id="increaseMoodButtonB">Inc moodB x30</button><br>
+    <div id="all-div" class="all-div gameplay-main-screen">
+        <div id="top-div-first" class="top-div">
+            <div id="messageBox" class="messagebox">
+                It is difficult to see your surroundings.<br>You feel sluggish.<br>
+            </div>
+        </div>
+        
+        
+        <div id="top-div-middle" class="top-div">
+            <button id="stepForwardButton" class="gameplay button primary-action-button ready">
+                Step forward</button><br>
+            <button id="stepBackwardButton" class="gameplay button primary-action-button active ready">
+                Step backward</button><br><br>
+            <button id="increaseMoodButton" class="gameplay button primary-action-button active">
+                Inc mood x30</button>
+            <button id="increaseMoodButtonR" class="gameplay button primary-action-button inactive">
+                Inc moodR x30</button>
+            <button id="increaseMoodButtonG" class="gameplay button primary-action-button ready">Inc moodG x30</button>
+            <button id="increaseMoodButtonB" class="gameplay button primary-action-button ready">Inc moodB x30</button>
+            <br>
+            
+            <button id="decreaseMoodButton" class="gameplay button primary-action-button ready">Dec mood x30</button>
+            <button id="decreaseMoodButtonR" class="gameplay button primary-action-button ready">Dec moodR x30</button>
+            <button id="decreaseMoodButtonG" class="gameplay button primary-action-button ready">Dec moodG x30</button>
+            <button id="decreaseMoodButtonB" class="gameplay button primary-action-button ready">Dec moodB x30</button>
+            <br><br>
+            
+            <button class="gameplay test-button button primary-action-button">(gameplay primary-action-button)</button>
+            <button class="gameplay test-button button primary-action-button ready">(gameplay primary-action-button ready)</button>
+            <button class="gameplay test-button button primary-action-button active">(gameplay primary-action-button active)</button>
+            <button class="gameplay test-button button primary-action-button inactive">(gameplay primary-action-button inactive)</button>
+            <br>
+            <button class="gameplay test-button button primary-action-button active inactive">(gameplay primary-action-button active inactive)</button>
+            <button class="gameplay test-button button primary-action-button ready active">(gameplay primary-action-button ready active)</button>
+            
+            <button class="gameplay test-button button primary-action-button ready">Button with very long text (2 lines)</button>
+            <button class="gameplay test-button button primary-action-button ready">Button with very long text (should be more than 2 lines)</button><br>
+        </div>
+        
+        
+        <div id="top-div-last" class="top-div">
+            <div id="statusArea">This area will contain icons and stuff.</div>
+            <div id="girlMessageBox" class="messagebox girl-element">Girly thoughts...</div>
+            <div id="footerArea">
+                <button id="titleReturnButton">Back to title</button><br>
+                <!-- Include buttons for pausing, sound on/off, manual save game, return to title, etc etc -->
+            </div>
+        </div>
+    </div>
     
-    <button id="decreaseMoodButton">Dec mood x30</button>
-    <button id="decreaseMoodButtonR">Dec moodR x30</button>
-    <button id="decreaseMoodButtonG">Dec moodG x30</button>
-    <button id="decreaseMoodButtonB">Dec moodB x30</button><br>
-    
-    <button id="titleReturnButton">Back to title</button><br>
-    
-    <div id="messageBox">It is difficult to see your surroundings.<br>You feel sluggish.<br></div>
     
     <!-- Add scripts to be loaded here. -->
     <script src="script/walker.js" charset="utf-8"></script>
