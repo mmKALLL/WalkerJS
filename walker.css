@@ -27,7 +27,7 @@ body {
 }
 
 .button.ready {
-  border: solid 5px var(--mood-text-color);
+  border: solid 3px var(--mood-text-color);
 }
 
 .hidden {
