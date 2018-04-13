@@ -1,15 +1,16 @@
 "use strict";
 
 /* ********************************************************\
- * Walker - Path to Darkness
- * A game about walking the long road of life.
- * Author: Esa Koskinen (mmKALLL)
- *
- * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
- * Copyright (c) 2017-2018 Esa Koskinen
- * ********************************************************/
+* Walker - Path to Darkness
+* A game about walking the long road of life.
+* Author: Esa Koskinen (mmKALLL)
+*
+* NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
+* Copyright (c) 2017-2018 Esa Koskinen
+* ********************************************************/
 (function () {
   
+  // DONE: Add filtering of debug messages based on constant.
   // FIXME: Remove temporary layout elements.
   // FIXME: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
   
@@ -20,7 +21,6 @@
   // TODO: Add timer system for action cooldown, with button-background adjust.
   // TODO: Debug the player's movement.
   // TODO: Figure out a way to calculate totalSteps without function call parentheses.
-  // TODO: Add some interesting messages.
   // TODO: Add message div max size and disappearing messages, fadeout near bottom, message text color param.
   // TODO: Add text bunching ("Took step! (x19)" -> "Took step! (x20)" when same message is repeated.)
   
@@ -30,20 +30,24 @@
   // TODO: Keep track of player inventory.
   // TODO: Keep track of position, place items on map.
   // TODO: Implement houses, towns, cities, and the Capital, as well as merchants and other random encounters.
+  
   // TODO: Cutscenes. Fade out .gameplay, fade in/out text that floats up or down.
   // TODO: Control mood within cutscenes.
+  // TODO: Add some interesting messages and world events.
   // TODO: Implement The Friend.
+  // TODO: Implement a pause button, and pause game during cutscenes.
   // TODO: Implement endings.
   
   // EXTEND: Export/import saves as strings.
   // EXTEND: Full screen button.
   // EXTEND: Fade out buttons on cutscene/return to title.
   // EXTEND: Fade bg back to white when returning to the title screen.
-
+  
   var constants = {
+    DEBUG: true,
     TEXT_COLOR_SWITCH_THRESHOLD: 137, // Text color based on HSP space Perceived Brightness
   };
-
+  
   var player = {
     forwardSteps: 0,
     backwardSteps: 0,
@@ -60,126 +64,127 @@
     get moodColor() { return rgb(player.moodColorR, player.moodColorG, player.moodColorB); },
     get moodTextColor() {
       if (constants.TEXT_COLOR_SWITCH_THRESHOLD >
-            colorBrightness(player.moodColorR, player.moodColorG, player.moodColorB)) {
-        return "white";
-      } else {
-        return "black";
-      }
-    },
-
-    stepForward: function() {
-      player.forwardSteps += 1;
-      if (player.totalSteps <= 1)
-        messagebox.pushMessage("You have taken your first step!");
-      else messagebox.pushMessage("You have taken a step " + player.totalSteps + " times!");
-      updateStatus();
-    },
-
-    stepBackward: function() {
-      player.backwardSteps += 1;
-      if (player.backwardSteps <= 1)
-        messagebox.pushMessage("You took a step back!");
-      else
-        messagebox.pushMessage("You have taken a step back " + player.backwardSteps + " times!");
-      updateStatus();
-    },
-    
-    // Calling with just amount param adjusts base mood. Color assumed to be a string, one of "n" (neutral), "r", "g" or "b".
-    changeMood: function(amount, colorLetter) {
-      var color = colorLetter ? colorLetter.toString().toLowerCase() : "n";
-      if (color === "r") {
-        player.moodRed += amount;
-        player.moodRed = Math.min(100, Math.max(player.moodRed, 0));
-        messagebox.pushMessage("Changed moodRed by " + amount);
-      } else if (color === "g") {
-        player.moodGreen += amount;
-        player.moodGreen = Math.min(100, Math.max(player.moodGreen, 0));
-        messagebox.pushMessage("Changed moodGreen by " + amount);
-      } else if (color === "b") {
-        player.moodBlue += amount;
-        player.moodBlue = Math.min(100, Math.max(player.moodBlue, 0));
-        messagebox.pushMessage("Changed moodBlue by " + amount);
-      } else {
-        player.mood += amount;
-        player.mood = Math.min(155, Math.max(player.mood, 0));
-        messagebox.pushMessage("Changed mood by " + amount);
-      }
-      updateStatus();
-      updateMoodEffects();
-    },
-    
-    changeMoodFunc: function(amount, color) {
-      return function(event) {
-        console.log(event);
-        if (event.target.classList.contains("inactive")) {
-          console.log("lol no");
+        colorBrightness(player.moodColorR, player.moodColorG, player.moodColorB)) {
+          return "white";
         } else {
-          player.changeMood(amount, color);
+          return "black";
         }
-      };
+      },
+      
+      stepForward: function() {
+        player.forwardSteps += 1;
+        if (player.totalSteps <= 1)
+        messageBox.pushDebug("You have taken your first step!");
+        else messageBox.pushDebug("You have taken a step " + player.totalSteps + " times!");
+        updateStatus();
+      },
+      
+      stepBackward: function() {
+        player.backwardSteps += 1;
+        if (player.backwardSteps <= 1)
+        messageBox.pushDebug("You took a step back!");
+        else
+        messageBox.pushDebug("You have taken a step back " + player.backwardSteps + " times!");
+        updateStatus();
+      },
+      
+      // Calling with just amount param adjusts base mood. Color assumed to be a string, one of "n" (neutral), "r", "g" or "b".
+      changeMood: function(amount, colorLetter) {
+        var color = colorLetter ? colorLetter.toString().toLowerCase() : "n";
+        if (color === "r") {
+          player.moodRed += amount;
+          player.moodRed = Math.min(100, Math.max(player.moodRed, 0));
+          messageBox.pushDebug("Changed moodRed by " + amount);
+        } else if (color === "g") {
+          player.moodGreen += amount;
+          player.moodGreen = Math.min(100, Math.max(player.moodGreen, 0));
+          messageBox.pushDebug("Changed moodGreen by " + amount);
+        } else if (color === "b") {
+          player.moodBlue += amount;
+          player.moodBlue = Math.min(100, Math.max(player.moodBlue, 0));
+          messageBox.pushDebug("Changed moodBlue by " + amount);
+        } else {
+          player.mood += amount;
+          player.mood = Math.min(155, Math.max(player.mood, 0));
+          messageBox.pushDebug("Changed mood by " + amount);
+        }
+        updateStatus();
+        updateMoodEffects();
+      },
+      
+      changeMoodFunc: function(amount, color) {
+        return function(event) {
+          console.log(event);
+          if (event.target.classList.contains("inactive")) {
+            console.log("Inactive button clicked.");
+          } else {
+            player.changeMood(amount, color);
+          }
+        };
+      }
+      
+    };
+    
+    // Returns a CSS parseable RGB color.
+    function rgb(r, g, b){
+      r = Math.floor(r);
+      g = Math.floor(g);
+      b = Math.floor(b);
+      return ["rgb(", r, ",", g, ",", b, ")"].join("");
     }
-
-  };
-
-  // Returns a CSS parseable RGB color.
-  function rgb(r, g, b){
-    r = Math.floor(r);
-    g = Math.floor(g);
-    b = Math.floor(b);
-    return ["rgb(", r, ",", g, ",", b, ")"].join("");
-  }
-  
-  // Return brightness of color in the HSP space; range 0-255.
-  // http://alienryderflex.com/hsp.html
-  function colorBrightness(r, g, b) {
-    return Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
-  }
-
-  var messagebox = {
-    elem: document.getElementById("messageBox"),
-    pushMessage: function(string) { this.elem.innerHTML = string + "<br>" + this.elem.innerHTML; },
-  };
-
-
-  function updateStatus() {
-    var elem = document.getElementById("statusArea");
-    elem.innerHTML =  "You have taken " + player.totalSteps + " steps.<br>" +
-                      "Your current position is " + player.position + ".<br>" +
-                      "Your current mood is " + player.mood + ".<br>";
-  }
-  
-  function updateMoodEffects() {
-    var elem = document.documentElement;
-    elem.style.setProperty("--mood-background-color", player.moodColor);
-    elem.style.setProperty("--mood-text-color", player.moodTextColor);
-  }
-
-  function startNewGame() {
-    document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
-    document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
     
-    document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(30));
-    document.getElementById("increaseMoodButtonR").addEventListener("click", player.changeMoodFunc(30, "r"));
-    document.getElementById("increaseMoodButtonG").addEventListener("click", player.changeMoodFunc(30, "g"));
-    document.getElementById("increaseMoodButtonB").addEventListener("click", player.changeMoodFunc(30, "b"));
+    // Return brightness of color in the HSP space; range 0-255.
+    // http://alienryderflex.com/hsp.html
+    function colorBrightness(r, g, b) {
+      return Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
+    }
     
-    document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-30));
-    document.getElementById("decreaseMoodButtonR").addEventListener("click", player.changeMoodFunc(-30, "r"));
-    document.getElementById("decreaseMoodButtonG").addEventListener("click", player.changeMoodFunc(-30, "g"));
-    document.getElementById("decreaseMoodButtonB").addEventListener("click", player.changeMoodFunc(-30, "b"));
+    var messageBox = {
+      elem: document.getElementById("messageBox"),
+      pushMessage: function(string) { this.elem.innerHTML = string + "<br>" + this.elem.innerHTML; },
+      pushDebug: function(string) { if (constants.DEBUG) messageBox.pushMessage(string); },
+    };
     
-    document.getElementById("titleReturnButton").addEventListener("click", function() {
-      window.location.replace("./index.html");
-    });
     
-    var elem = document.documentElement;
-    elem.style.setProperty("--mood-background-color", "white");
-    elem.style.setProperty("--mood-text-color", "black");
+    function updateStatus() {
+      var elem = document.getElementById("statusArea");
+      elem.innerHTML =  "You have taken " + player.totalSteps + " steps.<br>" +
+      "Your current position is " + player.position + ".<br>" +
+      "Your current mood is " + player.mood + ".<br>";
+    }
     
-    updateStatus();
-    window.setTimeout(updateMoodEffects, 100); // Allow background transition using timeout.
-  }
-  
-  startNewGame();
-  
-})();
+    function updateMoodEffects() {
+      var elem = document.documentElement;
+      elem.style.setProperty("--mood-background-color", player.moodColor);
+      elem.style.setProperty("--mood-text-color", player.moodTextColor);
+    }
+    
+    function startNewGame() {
+      document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
+      document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
+      
+      document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(30));
+      document.getElementById("increaseMoodButtonR").addEventListener("click", player.changeMoodFunc(30, "r"));
+      document.getElementById("increaseMoodButtonG").addEventListener("click", player.changeMoodFunc(30, "g"));
+      document.getElementById("increaseMoodButtonB").addEventListener("click", player.changeMoodFunc(30, "b"));
+      
+      document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-30));
+      document.getElementById("decreaseMoodButtonR").addEventListener("click", player.changeMoodFunc(-30, "r"));
+      document.getElementById("decreaseMoodButtonG").addEventListener("click", player.changeMoodFunc(-30, "g"));
+      document.getElementById("decreaseMoodButtonB").addEventListener("click", player.changeMoodFunc(-30, "b"));
+      
+      document.getElementById("titleReturnButton").addEventListener("click", function() {
+        window.location.replace("./index.html");
+      });
+      
+      var elem = document.documentElement;
+      elem.style.setProperty("--mood-background-color", "white");
+      elem.style.setProperty("--mood-text-color", "black");
+      
+      updateStatus();
+      window.setTimeout(updateMoodEffects, 100); // Allow background transition using timeout.
+    }
+    
+    startNewGame();
+    
+  })();
