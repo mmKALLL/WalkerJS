@@ -19,7 +19,7 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
 ## Roadmap
 ```
 // DONE: Add filtering of debug messages based on constant.
-// FIXME: Remove temporary layout elements.
+// DONE: Remove temporary layout elements.
 // FIXME: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
 
 // TODO: Experiment with different UI layouts and check responsiveness of having things of different sizes.
