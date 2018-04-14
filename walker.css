@@ -34,6 +34,7 @@ body {
   min-width: 360px;
   /*min-width: 380px;*/
   max-width: 450px;
+  margin-bottom: 5vh;
 }
 
 #top-div-last {
@@ -52,7 +53,10 @@ body {
     width: 100%;
   }
   
-  /* TODO: Re-arrange the footer to be at bottom. */
+  #footerArea {
+    float: right;
+    clear: both;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -63,20 +67,11 @@ body {
 
 
 
-
-#footerWrapper {
-  float:right;
-  width: 100px;
-  
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -60px;
-}
-
 #footerArea {
-  position: absolute;
+  position: fixed;
+  right: 12px;
   bottom: 12px;
+  height: 20px;
 }
 
 

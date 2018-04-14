@@ -4,7 +4,7 @@ A simple game about a man and a road. Deeper than one may think.
 
 Made as an exercise using vanilla JavaScript, because why not. Currently in very early stages of explorative development, but there will be more to come.
 
-For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
+For testing, can be tried out at https://mmkalll.github.io/walker-js/
 
 /* *****************************************************************************************\  
 ** Walker - Path to Darkness  
@@ -26,6 +26,7 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
 // TODO: Adjust button/div widths and margins based on screen width and height.
 // DONE: Implement the basic controls and layout. (3 columns)
 // TODO: Use css-grid for handling complex layout.
+// TODO: Center button div on smaller viewports.
 
 // TODO: Add timer system for action cooldown, with button-background adjust.
 // TODO: Debug the player's movement.
