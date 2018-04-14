@@ -20,6 +20,7 @@ body {
   padding: 10px;
   border: 2px solid #ff0000;
   float: left;
+  max-height: 95vh;
 }
 
 #top-div-first {
@@ -72,7 +73,11 @@ body {
   background-color: rgba(200, 140, 100, 0.25) !important;
 }
 
-
+#messageBox {
+  min-height: 20vh;
+  max-height: 45.2vh;
+  overflow: hidden;
+}
 
 #screen {
   min-width: 200px;
@@ -116,6 +121,8 @@ body {
 .hidden {
   visibility: hidden;
 }
+
+
 
 #newGameButton {
   margin: auto;
