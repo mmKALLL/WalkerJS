@@ -1,6 +1,9 @@
 :root {
   --mood-background-color: white;
   --mood-text-color: black;  /* TODO: Consider the use of softer colors, eg. #222 for text */
+  --top-div-first-min-width: 400px;
+  --top-div-middle-min-width: 360px;
+  --top-div-last-min-width: 480px;
   /* Maybe add transitions as global var? */
   /* It is a nice effect when buttons flash and others adjust, there should be multiple transitions...  */
 }
@@ -30,11 +33,12 @@ body {
 }
 
 #top-div-middle {
+  text-align: center;
   width: 25%;
   min-width: 360px;
   /*min-width: 380px;*/
   max-width: 450px;
-  margin-bottom: 5vh;
+  margin-bottom: 3vh; /* This needs to be below margin */
 }
 
 #top-div-last {
@@ -44,7 +48,10 @@ body {
 }
 
 
-
+/* TODO: Use the min-width variables. */
+@media screen and (max-width: 1300px) {
+  
+}
 
 @media screen and (max-width: 680px) {
   .top-div {
