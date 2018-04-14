@@ -1,6 +1,7 @@
 :root {
   --mood-background-color: white;
   --mood-text-color: black;  /* TODO: Consider the use of softer colors, eg. #222 for text */
+  --mood-important-text-color: #ccccff;
   --top-div-first-min-width: 400px;
   --top-div-middle-min-width: 360px;
   --top-div-last-min-width: 480px;
@@ -50,7 +51,7 @@ body {
 
 /* TODO: Use the min-width variables. */
 @media screen and (max-width: 1300px) {
-  
+
 }
 
 @media screen and (max-width: 680px) {
@@ -99,7 +100,11 @@ body {
   overflow: hidden;
 }
 
-span.message-fadeout {
+message-important {
+  color: var(--mood-important-text-color);
+}
+
+message-fadeout {
   opacity: 1;
   animation: fadeTextInOut 12000ms ease-in forwards;
 }
