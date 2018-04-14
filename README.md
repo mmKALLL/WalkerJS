@@ -25,6 +25,7 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
 // DONE: Experiment with different UI layouts and check responsiveness of having things of different sizes.
 // TODO: Adjust button/div widths and margins based on screen width and height.
 // DONE: Implement the basic controls and layout. (3 columns)
+// TODO: Use css-grid for handling complex layout.
 
 // TODO: Add timer system for action cooldown, with button-background adjust.
 // TODO: Debug the player's movement.
