@@ -13,6 +13,7 @@ body {
 
 #all-div {
   width: 100%;
+  line-height: 1.4;
 }
 
 .top-div {
@@ -29,7 +30,7 @@ body {
 
 #top-div-middle {
   width: 25%;
-  min-width: 320px;
+  min-width: 360px;
   /*min-width: 380px;*/
   max-width: 450px;
 }
@@ -50,7 +51,7 @@ body {
 
 @media screen and (max-width: 560px) {
   .top-div {
-    padding: 1%;
+    padding: 1.2%;
   }
 }
 
@@ -58,6 +59,36 @@ body {
   clear: both;
   float: right;
 }
+
+
+
+.messagebox {
+  margin: 12px 0px 0px 0px; /* URDL */
+  padding: 12px 12px 12px 12px; /* URDL */
+  background-color: rgba(150, 200, 100, 0.2);
+}
+
+.girl-element {
+  background-color: rgba(200, 140, 100, 0.25) !important;
+}
+
+
+
+#screen {
+  min-width: 200px;
+  min-height: 300px;
+}
+
+.screen-area {
+  padding: 12px 12px 12px 12px; /* URDL */
+  background-color: rgba(150, 150, 200, 0.2);
+}
+
+#statusArea {
+  line-height: 110%;
+}
+
+
 
 .button {
   background-color: Transparent;
@@ -68,8 +99,6 @@ body {
   margin: 9px 7px 9px 6.5px; /* URDL; exactly 17px grid spacing on Chrome. */
   width: 160px;
   height: 40px;
-  min-width: 120px;
-  min-height: auto;
   max-width: 60%;
   max-height: auto;
   /*transform: scale(1);*/
@@ -86,14 +115,6 @@ body {
 
 .hidden {
   visibility: hidden;
-}
-
-#screen {
-  min-height: 300px;
-}
-
-.screen-area {
-  background-color: rgba(150, 150, 200, 0.2);
 }
 
 #newGameButton {
