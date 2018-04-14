@@ -22,9 +22,9 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/index.html
 // DONE: Remove temporary layout elements.
 // FIXME: Prefix things with "wjs" namespace and move event handlers & constants/player/gamestate to separate files.
 
-// TODO: Experiment with different UI layouts and check responsiveness of having things of different sizes.
+// DONE: Experiment with different UI layouts and check responsiveness of having things of different sizes.
 // TODO: Adjust button/div widths and margins based on screen width and height.
-// TODO: Implement the basic controls and layout. (3 columns)
+// DONE: Implement the basic controls and layout. (3 columns)
 
 // TODO: Add timer system for action cooldown, with button-background adjust.
 // TODO: Debug the player's movement.
