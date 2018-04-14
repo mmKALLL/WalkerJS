@@ -11,27 +11,29 @@ body {
   transition: background-color 2800ms cubic-bezier(0.39, 0.575, 0.565, 1), color 600ms ease-out;
 }
 
+#all-div {
+  width: 100%;
+}
+
 .top-div {
   padding: 10px;
   border: 2px solid #ff0000;
+  float: left;
 }
 
 #top-div-first {
-  float: left;
   width: 32%;
   min-width: 400px;
   max-width: 100%;
 }
 
 #top-div-middle {
-  float: left;
   width: 25%;
   min-width: 380px;
   max-width: 450px;
 }
 
 #top-div-last {
-  float: left;
   width: 32%;
   min-width: 480px;
   max-width: 100%;
@@ -39,9 +41,15 @@ body {
 
 @media screen and (max-width: 680px) {
   .top-div {
+    float: left !important;
     max-width: 100%;
     width: 100%;
   }
+}
+
+#footerArea {
+  clear: both;
+  float: right;
 }
 
 .button {
