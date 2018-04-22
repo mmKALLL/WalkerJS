@@ -1,0 +1,117 @@
+Let's learn Haskell, Rust, Python, Go, PureScript, TypeScript, Crystal!
+
+
+============ OWNER : Esa Koskinen, esakoskin2@gmail.com ==================
+
+WalkerJS notes:
+
+
+---------------
+
+2018-04-16
+
+Remove merchant elements unless it's crucial to core gameplay - if the game can't stand without them, it's not engaging enough. Consider towns and merchant stuff only after completing the main thing.
+
+Perhaps key items should be separate from merchantable/single-use items. If so, separate item space into tabs that transition left-to-right if tabs on top, up-to-down if tabs on left edge (would be interesting UI, although less intuitive UX? Also horiz space is the bottleneck.)
+
+In order to make core gameplay more interesting, we could add emphasis on step back, etc. Also make player wonder about what the road is about. Is this the road of life? What am I making progress towards? Am I trying to get somewhere, or running from something? Is this path the right one? What am I trying to accomplish, anyway? Is this road leading somewhere? Is there any meaning to this? Am I moving forwards, or backwards? Which way does this road take me? ...Am I getting over her, or simply wallowing in pain (conclusion dependent on mood, possibly)? Is there something else I could do? (productivity +10, wrt Novin viesti, maybe unlock the unlockability of on-rest activities)?
+
+
+Unlock UI one-by-one by stepping forward, but what would be useful/interesting to unlock? What is the downside of unlocking something? Is it possible to press the button and not unlock anything? What in-theme message could be displayed if user tries to repeatedly unlock things? At what timing is the relationship of mood and energy displayed? Less details at first, can give more exact info even about the same items. (little vs 15 vs 15 (+2/sec))
+
+When does mood change? Specifically, what increases it? Hearing the girl talk? Does the girl always talk when she has something to say and you take a rest? Does taking a rest reduce mood or energy gain if girl says nothing? What makes you want to try harder in life? ...Under consideration.
+
+Will the ending be fixed at 20-40 days, or will the game continue until some kind of closure is reached? I guess mood drops could be more frequent if no hope is in sight, leading to exhaustion, no energy, no progress, and eventually to either suicide or death from overexertion.
+
+Will food/shelter be mandatory? Does the protagonist figure out that they are carrying supplies, without noticing at first (due to low mood and no steps back)? Shelter should impact mood, food obiously would be interesting due to energy vs time/money and planning tradeoffs but requires lots of management and separate tracking of hunger. What about spoilage? One dynamically interesting solution would be to have "general ration" items, which are consumed twice per day. Description: "Bland but filling rations, containing (vegetable paste/food-edible/preparable-on-the-go, something without spoiling) and water."
+
+What is the initial status of the game? The protagonist has travelled back in time, exhausted and only knowing that they must keep moving forward. Why? Because in previous timeline, they knew that they could reach/re-meet the girl if they move forward fast enough to catch up. The time travel is rough, and causes fatigue, depression, and amnesia until a certain amount of time has passed. Then you remember everything - that you travelled through time, witnessing a plethora of possibilities unravel before your eyes. Running back to the starting point to find your time machine, you decide to give future another shot (resetting the game, but again either you or the girl die; there is no changing what is meant to happen (suddenly wtf this is like steins gate lol)).
+
+IF you decide to give the player an out from the grip of fate, implement it late and only after the best of ideas. Don't let it be half-assed or incomplete, or emotionally easy - make it the highlight for the type of player who would super-optimize everything, and force them to never pick up the game ever again. Don't cut things to please them, though - you need to cater to the 99.2% audience first.
+
+Is the game always in initial state, or is there "prestige"? I guess the player could unlock "cheats", e.g. a 2x speed mode after completion. However, why not make that available to all as accessibility settings? (Actually good idea) 
+
+Is there a highscore list or something, to track amount of steps taken by playr? No, but there is a VERY BAD ENDING for players who try to over-optimize everything. Think in the vein of Mother 2 cheater mode or Undertale G-route.
+
+Are the main characters genderless? That is should the girl be written as your ideal girl, but referred to as "companion" and "they" in all instances in-game? The meeting would be the hardest, but maybe... "They are strikingly beautiful, and you immediately feel a twinge of attraction towards this person." Need to think about this, but it would require rendering protagonist genderless too. Quite possibly a good thing; just don't let it affect the writing of the characters themselves, their integrity must not be compromised.
+
+
+
+
+
+----------------
+
+2018-04-12
+
+Don't allow the game to be such that one plays it and thinks "it's nice, but not sure what the point is..."; ensure the girl and hook is so engaging that people will want to know what happens next ("no! what about the girl?? what happened? I need to know how this thing turns out ;__; ")
+
+Green route (meet girl, go together, happy lives, good ending, standard for 1st playthrough)
+
+Blue route (merchant)
+
+Red route (lovesick, "bad" i.e. best ending):
+You see a person in the distance.
+The person looks like a young woman, perhaps in her early 20s.
+She is just standing there. You wonder who she is.
+You approach the girl, and she asks whether she could accompany you. You agree.
+
+(if moving at high speed)
+The both of you are moving at a fast pace. She seems to have a bit of difficulty keeping up with the pace.
+You are forging on, and she is starting to lose breath. Perhaps it is time for a rest.
+It is clear this girl is slowing you down a bit.
+The young woman is holding you back. Will you move ahead without her? (y/n)
+
+(if changing speeds/taking two rests)
+After resting, she seems to have regained her energy.
+Taking a break seems to have improved her stamina.
+(After steps forward) While she has less physical strenght, she is clearly getting more with each rest.
+
+(she catches up to you, non-insane speed)
+A girl catches up with you. She says: Well, I certainly don't see many people here! Where are you hea-- ...Wait, are you the person I met earlier? ...Hahaha. What a coincidence! I've learnt from our previous encounter, and have much better endurance now. Mind if I tag along? I won't slow you down again, promise. (y/n)
+
+(she catches up to you, insane speed)
+Girl: Hey... There... You... Are...
+I've been running non-stop for a while now, and finally caught up.
+
+It's.. Um... Sorry. I don't mean that I chased after you. It's just... After our encounter, I couldn't stop thinking about you... So I decided to become faster than you, no matter what it takes, and catch up!
+
+...How are you doing? Must be pretty lonely here, huh? ...Ha ha.
+
+(She never catches up)
+...
+
+
+(if moving at very slow speed, or taking multiple breaks (harder to achieve, second-fourth playthrough thing, kind of hinted by above))
+Girl: Are you tired as well?
+We still have a long way to go. Let's keep moving.
+Look, we have to keep moving.
+Can't you hurry up a bit?
+I understand that you are tired, but can you step it up?
+...
+...
+Look, I need to get to my next destination faster than this. What's wrong? Are you not feeling well?
+...Sorry, but I'll be leaving you behind if you continue at this pace.
+...
+Sorry, but I really need to go ahead. Do your best now, OK? (The girl picks up the pace and leaves you behind.)
+(You wonder if you will meet with the girl again, somewhere.)
+(She seemed to have urgent business, and you can't help wondering why she was in a hurry.)
+(She seemed kind of cute, too... You wonder where she went.)
+(You can't stop thinking about that girl.)
+(...)
+(...)
+(The girl is still bothering you. Who was she? Why did she tag along despite being in a hurry?)
+(...)
+(You wish you could have done something for her.)
+
+
+(You catch up, medium speed)
+Encounter as traders, she doesn't remember you, rejection
+
+(You catch up, insane speed)
+(She is dead, and you go back in time)
+
+(You never catch up [exceed day 40])
+(You commit suicide)
+
+
+
