@@ -23,15 +23,15 @@ When does mood change? Specifically, what increases it? Hearing the girl talk? D
 
 Will the ending be fixed at 20-40 days, or will the game continue until some kind of closure is reached? I guess mood drops could be more frequent if no hope is in sight, leading to exhaustion, no energy, no progress, and eventually to either suicide or death from overexertion.
 
-Will food/shelter be mandatory? Does the protagonist figure out that they are carrying supplies, without noticing at first (due to low mood and no steps back)? Shelter should impact mood, food obiously would be interesting due to energy vs time/money and planning tradeoffs but requires lots of management and separate tracking of hunger. What about spoilage? One dynamically interesting solution would be to have "general ration" items, which are consumed twice per day. Description: "Bland but filling rations, containing (vegetable paste/food-edible/preparable-on-the-go, something without spoiling) and water."
+Will food/shelter be mandatory? Does the protagonist figure out that they are carrying supplies, without noticing at first (due to low mood and no steps back)? Shelter should impact mood, food obiously would be interesting due to energy vs time/money and planning tradeoffs but requires lots of management and separate tracking of hunger. What about spoilage? One dynamically interesting solution would be to have "general ration" items, which are consumed twice per day. Description: "Bland but filling rations, containing (vegetable paste/food-edible/prepareable-on-the-go, something without spoiling) and water."
 
-What is the initial status of the game? The protagonist has travelled back in time, exhausted and only knowing that they must keep moving forward. Why? Because in previous timeline, they knew that they could reach/re-meet the girl if they move forward fast enough to catch up. The time travel is rough, and causes fatigue, depression, and amnesia until a certain amount of time has passed. Then you remember everything - that you travelled through time, witnessing a plethora of possibilities unravel before your eyes. Running back to the starting point to find your time machine, you decide to give future another shot (resetting the game, but again either you or the girl die; there is no changing what is meant to happen (suddenly wtf this is like steins gate lol)).
+What is the opening story of the game? The protagonist has travelled back in time, exhausted and only knowing that they must keep moving forward. Why? Because in previous timeline, they knew that they could reach/re-meet the girl if they move forward fast enough to catch up. The time travel is rough, and causes fatigue, depression, and amnesia until a certain amount of time has passed. Then you remember everything - that you travelled through time, witnessing a plethora of possibilities unravel before your eyes. Running back to the starting point to find your time machine, you decide to give future another shot (resetting the game, but again either you or the girl die; there is no changing what is meant to happen (suddenly wtf this is like steins gate lol)).
 
 IF you decide to give the player an out from the grip of fate, implement it late and only after the best of ideas. Don't let it be half-assed or incomplete, or emotionally easy - make it the highlight for the type of player who would super-optimize everything, and force them to never pick up the game ever again. Don't cut things to please them, though - you need to cater to the 99.2% audience first.
 
-Is the game always in initial state, or is there "prestige"? I guess the player could unlock "cheats", e.g. a 2x speed mode after completion. However, why not make that available to all as accessibility settings? (Actually good idea) 
+Is the game always in initial state, or is there "prestige"? I guess the player could unlock "cheats", e.g. a 2x speed mode after completion. However, why not make that available to all as accessibility settings? (Actually good idea)
 
-Is there a highscore list or something, to track amount of steps taken by playr? No, but there is a VERY BAD ENDING for players who try to over-optimize everything. Think in the vein of Mother 2 cheater mode or Undertale G-route.
+Is there a high score list or something, to track amount of steps taken by player? No, but there is a VERY BAD ENDING for players who try to over-optimize everything. Think in the vein of Mother 2 cheater mode or Undertale G-route.
 
 Are the main characters genderless? That is should the girl be written as your ideal girl, but referred to as "companion" and "they" in all instances in-game? The meeting would be the hardest, but maybe... "They are strikingly beautiful, and you immediately feel a twinge of attraction towards this person." Need to think about this, but it would require rendering protagonist genderless too. Quite possibly a good thing; just don't let it affect the writing of the characters themselves, their integrity must not be compromised.
 
@@ -64,7 +64,7 @@ The young woman is holding you back. Will you move ahead without her? (y/n)
 (if changing speeds/taking two rests)
 After resting, she seems to have regained her energy.
 Taking a break seems to have improved her stamina.
-(After steps forward) While she has less physical strenght, she is clearly getting more with each rest.
+(After steps forward) While she has less physical strength, she is clearly getting more with each rest.
 
 (she catches up to you, non-insane speed)
 A girl catches up with you. She says: Well, I certainly don't see many people here! Where are you hea-- ...Wait, are you the person I met earlier? ...Hahaha. What a coincidence! I've learnt from our previous encounter, and have much better endurance now. Mind if I tag along? I won't slow you down again, promise. (y/n)
@@ -112,6 +112,5 @@ Encounter as traders, she doesn't remember you, rejection
 
 (You never catch up [exceed day 40])
 (You commit suicide)
-
 
 
