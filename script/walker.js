@@ -108,7 +108,12 @@
     
     var messageBox = {
       elem: document.getElementById("messageBox"),
-      pushMessage: function(string) { this.elem.innerHTML = string + "<br>" + this.elem.innerHTML; },
+      pushMessage: function(string) {
+        this.elem.innerHTML = "<span class='message message-fadeout'>" + string + "</span><br>" + this.elem.innerHTML;
+      },
+      pushImportant: function(string) {
+        this.elem.innerHTML = "<span class='message message-important'>" + string + "</span><br>" + this.elem.innerHTML;
+      },
       pushDebug: function(string) { if (constants.DEBUG) messageBox.pushMessage(string); },
     };
     

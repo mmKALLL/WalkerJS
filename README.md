@@ -42,6 +42,7 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/
 // TODO: Keep track of position, place items on map.
 // TODO: Implement the trading system.
 // TODO: Implement houses, towns, cities, and the Capital, as well as merchants and other random encounters.
+// TODO: Implement footer - links, source, social media, feedback to dev, etc.
 
 // TODO: Cutscenes. Fade out .gameplay, fade in/out text that floats up or down.
 // TODO: Control mood within cutscenes.
@@ -56,4 +57,5 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/
 // EXTEND: Full screen button.
 // EXTEND: Fade out buttons on cutscene/return to title.
 // EXTEND: Fade bg back to white when returning to the title screen.
+// EXTEND: Possible to navigate and use with keyboard only.
 ```
