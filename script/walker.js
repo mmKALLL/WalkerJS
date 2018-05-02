@@ -8,13 +8,18 @@
 * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
 * Copyright (c) 2017-2018 Esa Koskinen
 * ********************************************************/
+var wjs = wjs || {};
+
 (function () {
 
+<<<<<<< HEAD
   var constants = {
     DEBUG: true,
     TEXT_COLOR_SWITCH_THRESHOLD: 137, // Text color based on HSP space Perceived Brightness
   };
 
+=======
+>>>>>>> Separated constants to their own file, fixing indentation.
   var player = {
     forwardSteps: 0,
     backwardSteps: 0,
@@ -31,6 +36,7 @@
     get moodColor() { return rgb(player.moodColorR, player.moodColorG, player.moodColorB); },
     get moodTextColor() {
       if (constants.TEXT_COLOR_SWITCH_THRESHOLD >
+<<<<<<< HEAD
         colorBrightness(player.moodColorR, player.moodColorG, player.moodColorB)) {
           return "white";
         } else {
@@ -49,9 +55,30 @@
       stepBackward: function() {
         player.backwardSteps += 1;
         if (player.backwardSteps <= 1)
+=======
+          colorBrightness(player.moodColorR, player.moodColorG, player.moodColorB)) {
+        return "white";
+      } else {
+        return "black";
+      }
+    },
+
+    stepForward: function() {
+      player.forwardSteps += 1;
+      if (player.totalSteps <= 1)
+      messageBox.pushDebug("You have taken your first step!");
+      else messageBox.pushDebug("You have taken a step " + player.totalSteps + " times!");
+      updateStatus();
+    },
+
+    stepBackward: function() {
+      player.backwardSteps += 1;
+      if (player.backwardSteps <= 1)
+>>>>>>> Separated constants to their own file, fixing indentation.
         messageBox.pushDebug("You took a step back!");
-        else
+      else
         messageBox.pushDebug("You have taken a step back " + player.backwardSteps + " times!");
+<<<<<<< HEAD
         updateStatus();
       },
 
@@ -78,6 +105,34 @@
         updateStatus();
         updateMoodEffects();
       },
+=======
+      updateStatus();
+    },
+
+    // Calling with just amount param adjusts base mood. Color assumed to be a string, one of "n" (neutral), "r", "g" or"b".
+    changeMood: function(amount, colorLetter) {
+      var color = colorLetter ? colorLetter.toString().toLowerCase() : "n";
+      if (color === "r") {
+        player.moodRed += amount;
+        player.moodRed = Math.min(100, Math.max(player.moodRed, 0));
+        messageBox.pushDebug("Changed moodRed by " + amount);
+      } else if (color === "g") {
+        player.moodGreen += amount;
+        player.moodGreen = Math.min(100, Math.max(player.moodGreen, 0));
+        messageBox.pushDebug("Changed moodGreen by " + amount);
+      } else if (color === "b") {
+        player.moodBlue += amount;
+        player.moodBlue = Math.min(100, Math.max(player.moodBlue, 0));
+        messageBox.pushDebug("Changed moodBlue by " + amount);
+      } else {
+        player.mood += amount;
+        player.mood = Math.min(155, Math.max(player.mood, 0));
+        messageBox.pushDebug("Changed mood by " + amount);
+      }
+      updateStatus();
+      updateMoodEffects();
+    },
+>>>>>>> Separated constants to their own file, fixing indentation.
 
       changeMoodFunc: function(amount, color) {
         return function(event) {
