@@ -8,7 +8,7 @@
 * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
 * Copyright (c) 2017-2018 Esa Koskinen
 * ********************************************************/
-var wjs = wjs || {};
+window.wjs = window.wjs || {};
 
 (function () {
 

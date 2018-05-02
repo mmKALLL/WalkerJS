@@ -8,7 +8,7 @@
 * NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.
 * Copyright (c) 2017-2018 Esa Koskinen
 * ********************************************************/
-var wjs = wjs || {};
+window.wjs = window.wjs || {};
 
 (function () {
 
@@ -191,6 +191,7 @@ var wjs = wjs || {};
   }
 
   function checkAssetLoad() {
+    console.log(wjs);
     if (
         wjs
         && wjs.constants //
@@ -209,6 +210,6 @@ var wjs = wjs || {};
     }
   }
 
-  var intervalID = window.setInterval(checkAssetLoad, 50);
+  var intervalID = window.setInterval(checkAssetLoad, 80);
 
 })();

@@ -4,7 +4,7 @@
   --mood-important-text-color: #ccccff;
   --top-div-first-min-width: 400px;
   --top-div-middle-min-width: 360px;
-  --top-div-last-min-width: 480px;
+  --top-div-last-min-width: 440px;
   /* Maybe add transitions as global var? */
   /* It is a nice effect when buttons flash and others adjust, there should be multiple transitions...  */
 }
@@ -29,14 +29,13 @@ body {
 
 #top-div-first {
   width: 32%;
-  min-width: 400px;
+  min-width: var(--top-div-first-min-width);
   max-width: 100%;
 }
 
 #top-div-middle {
   width: 25%;
-  min-width: 360px;
-  /*min-width: 380px;*/
+  min-width: var(--top-div-middle-min-width);
   max-width: 450px;
   margin-bottom: 3vh; /* This needs to be below margin */
   text-align: center;
@@ -44,7 +43,7 @@ body {
 
 #top-div-last {
   width: 32%;
-  min-width: 480px;
+  min-width: var(--top-div-last-min-width);
   max-width: 100%;
 }
 
