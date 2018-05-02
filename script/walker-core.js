@@ -11,6 +11,7 @@
 window.wjs = window.wjs || {};
 
 (function () {
+  wjs.core = {};
 
   var player = {
     forwardSteps: 0,
@@ -190,26 +191,36 @@ window.wjs = window.wjs || {};
     }
   }
 
+  wjs.core.ready = false;
   function checkAssetLoad() {
-    console.log(wjs);
+    // console.log(wjs);
     if (
         wjs
+        && wjs.core      // Launcher, helper functions, etc.
         && wjs.constants //
-//        && wjs.events    // Event handling for buttons, etc.
-//        && wjs.player    // Player object.
-//        && wjs.companion // In-game companion's object.
-//        && wjs.features  // In-game feature class and objects.
-//        && wjs.mapEvents //
-//        && wjs.strings   // In-game text, with some translation support.
+        && wjs.events    // Event handling for buttons, etc.
+        && wjs.player    // Player object.
+        && wjs.companion // In-game companion's object.
+        && wjs.features  // In-game feature class and objects.
+        && wjs.mapEvents //
+        && wjs.strings   // In-game text, with some translation support.
         // TODO: Check that image and sound assets are loaded.
     ) {
       window.clearInterval(intervalID);
+      wjs.core.ready = true;
       startNewGame();
     } else {
 
     }
   }
 
+  function handleAssetFail() {
+    if (!wjs.core.ready) {
+      console.log("Something went wrong while loading assets. Please refresh, or post a bug report at https://github.com/mmKALLL/walker-js/issues .");
+    }
+  }
+
   var intervalID = window.setInterval(checkAssetLoad, 80);
+  window.setTimeout(handleAssetFail, 2000);
 
 })();
