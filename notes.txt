@@ -1,4 +1,4 @@
-Let's learn Haskell, Rust, Python, Go, PureScript, TypeScript, Crystal!
+Let's learn Haskell, Rust, Python, PureScript, TypeScript, Elm, Crystal, Go!
 
 
 ============ OWNER : Esa Koskinen, esakoskin2@gmail.com ==================
