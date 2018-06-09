@@ -8,6 +8,30 @@ WalkerJS notes:
 
 ---------------
 
+2018-06-09
+
+Core gameplay is as follows.
+
+The game is about balancing moving forward, manging your mood, and making sure you don't run out of energy. This is accomplished be exchanging each resource for others in a fairly controlled but somewhat unpredictable way. The game should not be frustrating, but provide food for thought; the idea is that through their interpretation of the game mechanics, the player may gain insight about their own lives or of those around them. A core idea is that the main character is highly introverted, while their companion is extroverted.
+
+Energy - spend by moving forward and being social, replenished by rest and being alone.
+Mood - spend by not making progress or through events, gain by being social or through events.
+Fatigue - spend through time, gain by spending money on food. Affects energy use.
+Sleep - lose mood if sleeping in poor conditions, gain mood if sleeping in good conditions (risk/reward thinking, paying money for a premium)
+
+Essentially, not moving forward will conserve energy at the cost of mood, while moving forward and interacting with the world costs energy but improves mood. Furthermore, mood has three types, which the player can influence through their choices. These mood changes have various effects on the events that the player will come across, as well as their relation with the companion.
+
+The idea is to provide cognitive dissonance through the breakup with the companion character; a "loving/emotional" player will come across heartbreak through poverty/disease (prompting them to be rational), a "generous" player will come across heartbreak through perceived clinginess and poor relationship balance/dynamic (prompting them to be emotional), and a "rational" player will have to choose between money or the companion (prompting them to be generous). A "calculative", super efficient player will have the choice between a few extra stat points and mood immunity, but they need to harm the environment with gradually more impactful selfish acts, eventually killing the companion to achieve the highest performance. The main character will question their choices ("what was it all for..?"), and ultimately take their own life.
+
+The general "goal" is to advance through the game, moving forward as much as possible each day. Low mood acts as a multiplier for energy consumption, which encourages to move forward, but this is kept in check by increasing fatigue and mood loss multiplier when too much is happening in a short time. In other words, the player character gets exhausted if they encounter constant social situations, despite it being beneficial for mood in the short term.
+
+Another goal is to control hunger and lodging; by sleeping outside with a hungry stomach, one naturally loses a lot of mood. On the other hand, searching for food or paying for accommodation costs time and money respectively. Money can be gained by trading real-world time for money, the rate and maximum amount of which depends on location.
+
+One day in-game takes around two to ten minutes to go through, with a 20-50 sec cutscene. With 30 days, the whole game takes about 150-200 minutes. Endings are varied and depend on general mood and choices.
+
+
+---------------
+
 2018-04-16
 
 Remove merchant elements unless it's crucial to core gameplay - if the game can't stand without them, it's not engaging enough. Consider towns and merchant stuff only after completing the main thing.
