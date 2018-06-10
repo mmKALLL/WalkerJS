@@ -104,18 +104,6 @@ window.wjs = window.wjs || {};
     return Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
   }
 
-  var messageBox = {
-    elem: document.getElementById("messageBox"),
-    pushMessage: function(string) {
-      this.elem.innerHTML = "<span class='message message-fadeout'>" + string + "</span><br>" + this.elem.innerHTML;
-    },
-    pushImportant: function(string) {
-      this.elem.innerHTML = "<span class='message message-important'>" + string + "</span><br>" + this.elem.innerHTML;
-    },
-    pushDebug: function(string) { if (wjs.constants.DEBUG) messageBox.pushMessage(string); },
-  };
-
-
   function updateStatus() {
     var elem = document.getElementById("statusArea");
     elem.innerHTML =  "You have taken " + player.totalSteps + " steps.<br>" +
