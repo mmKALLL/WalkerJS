@@ -13,7 +13,7 @@ window.wjs = window.wjs || {};
 (function () {
   if (wjs.constants.LANGUAGE = "en_US") {
     wjs.strings = {
-      gamestart: "asd",
+      gameStart: "asd",
     };
   }
 })();

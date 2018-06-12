@@ -6,6 +6,29 @@ Let's learn Haskell, Rust, Python, Go, PureScript, TypeScript, Crystal!
 WalkerJS notes:
 
 
+
+---------------
+
+2018-06-12
+
+Straining.
+
+Running really fast for a long period of time puts strain on the body. At some point after reaching a high speed and running for a while without rest, the main character starts accumulating strain. With strain, first the screen starts periodically getting -30 mood pulses every 2-3 seconds (like heartbeat), then at shorter intervals and accompanied with sound effects, and finally the character "breaks", the screen goes deep red for a moment and starts fading back. Permanent -30 mood penalty, and one of the buttons the player had is randomly disabled.
+
+The player can recover one of the disabled buttons by resting for 1 day (but be left with mood penalty), or avoid getting any penalty by resting for 2 days. However, time is precious...
+
+This system makes the game more dynamic, and makes the player think about straining themselves too much despite their important (?) goal. Strain event should be dramatic and scary, to heighten the emotional impact. The sound effects are crucial.
+
+
+Competitions / items.
+
+Every now and then, main character will come across items with random stats a la Diablo etc. These items will have fairly strong and varied effects, changing gameplay strategies with their combinations. Each item should have a strong upside, with a moderate-high downside. Up to three items can be equipped at once, and the items can be sold for money (!). Finding great combinations is one of the key interests.
+
+There can also be running competitions with various goals, e.g. longest distance in a given time or shortest time for a given distance, with or without energy replenishment, with periodic energy replenishment, with or without weights (passive, absolute number penalty to speed), etc. Using items to win money at these events can be of strategic interest. Player may also be interested in trade-off of selling an item to get immediate cash, since future competitions may or may not require the item.
+
+Item effects may also include faster recovery of specific actions. Faster recovery of "step forward" is particularly valuable.
+
+
 ---------------
 
 2018-06-09

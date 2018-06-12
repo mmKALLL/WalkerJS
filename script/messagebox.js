@@ -12,13 +12,17 @@ window.wjs = window.wjs || {};
 
 (function () {
   wjs.messageBox = {
-    elem: document.getElementById("messageBox"),
-    pushMessage: function(string) {
+    elem: document.getElementById("message-box"),
+    companionElem: document.getElementById("companion-message-box"),
+    push: function(string) {
       this.elem.innerHTML = "<span class='message message-fadeout'>" + string + "</span><br>" + this.elem.innerHTML;
     },
     pushImportant: function(string) {
       this.elem.innerHTML = "<span class='message message-important'>" + string + "</span><br>" + this.elem.innerHTML;
     },
     pushDebug: function(string) { if (wjs.constants.DEBUG) messageBox.pushMessage(string); },
+    pushCompanion: function(string) {
+      this.companionElem.innerHTML = "<span class='message message-fadeout'>" + string + "</span><br>" + this.companionElem.innerHTML;
+    },
   };
 })();
