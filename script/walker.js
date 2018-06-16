@@ -133,7 +133,7 @@
 
     function startNewGame() {
 
-      document.getElementById("screen").style.visibility("hidden");
+      document.getElementById("screen").style.display("none");
 
       document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
       document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
