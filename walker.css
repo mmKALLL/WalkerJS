@@ -168,9 +168,9 @@ message-fadeout {
 
 
 
-#newGameButton {
-  margin: auto;
+#new-game-button {
   display: block;
+  margin: auto;
   margin-top: 10vh;
 }
 

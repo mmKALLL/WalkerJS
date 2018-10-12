@@ -10,5 +10,5 @@
   function startNewGame() {
     window.location.replace("./walker.html");
   }
-  document.getElementById("newGameButton").addEventListener("click", startNewGame);
+  document.getElementById("new-game-button").addEventListener("click", startNewGame);
 })();
