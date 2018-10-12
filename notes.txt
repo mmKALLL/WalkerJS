@@ -60,12 +60,16 @@ These display with a neutral BG color, dependent on mood.
 Even more on colors.
 
 There are also blend colors - yellow, purple, aqua, and white.
-Regular mood endings shift from black (rejected companionship on several occasions), to dark grey (no companion, default), to light grey (failed light red).
-
-At the end of black, a client-server connection is made, where the player receives a player-submitted suggestion (if server is available and not undefined, prewritten hint otherwise), and can submit their own (using an open multi-line textbox). Various checks are made (spelling against SOWPODS, and rejection if used )
-the main character says "Should I have done things differently in life? Maybe I made a mistake somewhere? Yeah, maybe I should have tried "
+Regular mood endings shift from black (rejected companionship on all occasions), to dark grey (met but parted with companion, default), to light grey (failed light red).
 
 
+At the end of either black or dark grey ending, a client-server connection is made, where the player receives a player-submitted suggestion (if server is available and not undefined, prewritten hint otherwise), and can submit their own (using a single-line text field). Various checks are made (spelling and redline against SOWPODS, and silent rejection if swearwords are used). The text submission has a single sentence maximum.
+The main character says "Should I have done things differently in life? Did I do a mistake somewhere? Yeah, maybe I should have tried {insert a randomly picked player submission, trimmed and in noncapital letters}."
+"...Or maybe not. I'm not sure if that sounds like a good idea. God, if you actually exist... I pray to you, please tell me what I should have done differently?"
+The submission text field opens, with text "Your answer to the plea: [    ]"
+
+
+A black ending has the main character be 
 
 
 ---------------
@@ -87,7 +91,7 @@ However, a slightly more romantic light red ending can be achieved if the player
 
 Green measures the level of selfless feelings. This indicates a want for the main character to do things for the companion and others. At the end of a green path, the player should be tested, with the companion wanting to do increasingly selfish acts and the player choosing whether to part from them or to be together.
 A dark green can indicate several things, such as need for companion approval through self-sacrifice, or overboard altruism with no self-regard, or selfless acts with ulterior motives. Basically it indicates doing things for others, not out of direct love towards them, but because of strong inner drive. However, this leaves the main character in a neglected state, slowly destroying their capability to progress and even drives away the people they worked so hard to please. If the companion is with them, their relationship turns borderline abusive, with completely one-sided "love". If the companion is gone, it ends up with exhaustion and burn-out at trying to improve the world, ultimately reaching neither the main character nor the world's goals. The main character should make this realization in the final cutscene, and lament their loneliness.
-A light green indicates a platonic friendship, which doesn't develop into romantic love. The player character does things for their companion, while taking care of their own mood and feelings. The game should provide a possibility to level up the companion speed by sacrificing one's mood permanently. However, when rarely used, one should end up with a light green ending, with them living their days happily as travellers with a love towards the world. When used a lot while staying at high mood, the player transitions to blue routes in the final days. When used a lot without staying at high mood, a dark green ending ensues. If the player starts caring for the world over their companion once the other starts being selfish or requiring game progression over altruism, the companion leaves. This light green variant
+A light green indicates a platonic friendship, which doesn't develop into romantic love. The player character does things for their companion, while taking care of their own mood and feelings. The game should provide a possibility to level up the companion speed by sacrificing one's mood permanently. However, when rarely used, one should end up with a light green ending, with them living their days happily as travellers with a love towards the world. When used a lot while staying at high mood, the player transitions to blue routes in the final days. When used a lot without staying at high mood, a dark green ending ensues. If the player starts caring for the world over their companion once the other starts being selfish or requiring game progression over altruism, the companion leaves. This light green variant ends with the main character realizing that it feels good to help others, finding balance between their actions and the world, and attains inner peace.
 
 
 
