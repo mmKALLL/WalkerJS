@@ -22,13 +22,13 @@ var wjs = wjs || {};
     moodRed: 0,   // represents passion, love, bonds
     moodGreen: 0, // represents optimism, wellbeing, altruism
     moodBlue: 0,  // represents rationality, thinking, calmness
-    get moodColorR() { return player.mood + player.moodRed; },
-    get moodColorG() { return player.mood + player.moodGreen; },
-    get moodColorB() { return player.mood + player.moodBlue; },
-    get moodColor() { return rgb(player.moodColorR, player.moodColorG, player.moodColorB); },
+    get moodColorR() { return wjs.player.mood + wjs.player.moodRed; },
+    get moodColorG() { return wjs.player.mood + wjs.player.moodGreen; },
+    get moodColorB() { return wjs.player.mood + wjs.player.moodBlue; },
+    get moodColor() { return rgb(wjs.player.moodColorR, wjs.player.moodColorG, wjs.player.moodColorB); },
     get moodTextColor() {
       if (wjs.constants.TEXT_COLOR_SWITCH_THRESHOLD >
-          colorBrightness(player.moodColorR, player.moodColorG, player.moodColorB)) {
+          colorBrightness(wjs.player.moodColorR, wjs.player.moodColorG, wjs.player.moodColorB)) {
         return "white";
       } else {
         return "black";
@@ -36,19 +36,19 @@ var wjs = wjs || {};
     },
 
     stepForward: function() {
-      player.forwardSteps += 1;
-      if (player.totalSteps <= 1)
+      wjs.player.forwardSteps += 1;
+      if (wjs.player.totalSteps <= 1)
       messageBox.pushDebug("You have taken your first step!");
-      else messageBox.pushDebug("You have taken a step " + player.totalSteps + " times!");
+      else messageBox.pushDebug("You have taken a step " + wjs.player.totalSteps + " times!");
       updateStatus();
     },
 
     stepBackward: function() {
-      player.backwardSteps += 1;
-      if (player.backwardSteps <= 1)
+      wjs.player.backwardSteps += 1;
+      if (wjs.player.backwardSteps <= 1)
         messageBox.pushDebug("You took a step back!");
       else
-        messageBox.pushDebug("You have taken a step back " + player.backwardSteps + " times!");
+        messageBox.pushDebug("You have taken a step back " + wjs.player.backwardSteps + " times!");
       updateStatus();
     },
 
@@ -56,20 +56,20 @@ var wjs = wjs || {};
     changeMood: function(amount, colorLetter) {
       var color = colorLetter ? colorLetter.toString().toLowerCase() : "n";
       if (color === "r") {
-        player.moodRed += amount;
-        player.moodRed = Math.min(100, Math.max(player.moodRed, 0));
+        wjs.player.moodRed += amount;
+        wjs.player.moodRed = Math.min(100, Math.max(wjs.player.moodRed, 0));
         messageBox.pushDebug("Changed moodRed by " + amount);
       } else if (color === "g") {
-        player.moodGreen += amount;
-        player.moodGreen = Math.min(100, Math.max(player.moodGreen, 0));
+        wjs.player.moodGreen += amount;
+        wjs.player.moodGreen = Math.min(100, Math.max(wjs.player.moodGreen, 0));
         messageBox.pushDebug("Changed moodGreen by " + amount);
       } else if (color === "b") {
-        player.moodBlue += amount;
-        player.moodBlue = Math.min(100, Math.max(player.moodBlue, 0));
+        wjs.player.moodBlue += amount;
+        wjs.player.moodBlue = Math.min(100, Math.max(wjs.player.moodBlue, 0));
         messageBox.pushDebug("Changed moodBlue by " + amount);
       } else {
-        player.mood += amount;
-        player.mood = Math.min(155, Math.max(player.mood, 0));
+        wjs.player.mood += amount;
+        wjs.player.mood = Math.min(155, Math.max(wjs.player.mood, 0));
         messageBox.pushDebug("Changed mood by " + amount);
       }
       updateStatus();
@@ -82,7 +82,7 @@ var wjs = wjs || {};
         if (event.target.classList.contains("inactive")) {
           console.log("Inactive button clicked.");
         } else {
-          player.changeMood(amount, color);
+          wjs.player.changeMood(amount, color);
         }
       };
     }
@@ -117,15 +117,15 @@ var wjs = wjs || {};
 
   function updateStatus() {
     var elem = document.getElementById("statusArea");
-    elem.innerHTML =  "You have taken " + player.totalSteps + " steps.<br>" +
-    "Your current position is " + player.position + ".<br>" +
-    "Your current mood is " + player.mood + ".<br>";
+    elem.innerHTML =  "You have taken " + wjs.player.totalSteps + " steps.<br>" +
+    "Your current position is " + wjs.player.position + ".<br>" +
+    "Your current mood is " + wjs.player.mood + ".<br>";
   }
 
   function updateMoodEffects() {
     var elem = document.documentElement;
-    elem.style.setProperty("--mood-background-color", player.moodColor);
-    elem.style.setProperty("--mood-text-color", player.moodTextColor);
+    elem.style.setProperty("--mood-background-color", wjs.player.moodColor);
+    elem.style.setProperty("--mood-text-color", wjs.player.moodTextColor);
   }
 
   function startNewGame() {
