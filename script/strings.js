@@ -11,7 +11,7 @@
 window.wjs = window.wjs || {};
 
 (function () {
-  if (wjs.constants.LANGUAGE = "en_US") {
+  if (wjs.constants.LANGUAGE === "en_US") {
     wjs.strings = {
       gameStart: "asd",
     };
