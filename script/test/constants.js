@@ -11,9 +11,9 @@
 var wjs = wjs || {};
 
 (function () {
-  if (wjs.constants.LANGUAGE === "en_US") {
-    wjs.strings = {
-      gameStart: "asd",
-    };
-  }
+  wjs.constants = {
+    DEBUG: true,
+    LANGUAGE: "en_US",
+    TEXT_COLOR_SWITCH_THRESHOLD: 137,
+  };
 })();
