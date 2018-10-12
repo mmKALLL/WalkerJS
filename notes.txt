@@ -6,6 +6,25 @@ Let's learn Haskell, Rust, Python, Go, PureScript, TypeScript, Crystal!
 WalkerJS notes:
 
 
+---------------
+
+2018-10-12
+
+More on colors.
+
+Black-White is a general mood factor. It basically measures the feelings of the main character on a scale between depressed and giddy. Generally the long-term changes to it are very gradual, but there can be a few events with huge impact. Resting, talking with the companion, and finding nice items give a good momentary boost.
+
+Red measures the level of selfish love. Basically this is the neediness of the main character, and their want/lust towards the companion or other characters. A dark red tint hints towards very needy behavior, a deep and strong desire towards approval and gaining a sense of safety by interacting with the companion. The companion finds this behavior a bit off-putting - while responding sympathetically at first, it will creep them out as the main character becomes more and more addicted to their presence (enforced by stronger but shorter positive mood swings from asking for hugs).
+The main character considers whether it is wrong of them to feel this way, to ask for closeness and approval when they really need it - presenting a choice to the player. Answering that it is okay will make them more needy, forcing the companion to leave them and putting the player in a tight spot (possibly suicide ending). Answering that it is not okay will force the player's red tint to subside and their addiction to lower over time. The player will have an option to honestly discuss this, and the companion will be supportive (although apprehensive and exhausted) of them. In this, the main character will regain their natural mood functionality, and the companion will not leave them, but the companion will become depressed and impaired instead, slowing down. Ditching them will put the player on a blue course, while staying will put them on a green one.
+A light red indicates that the main character is somewhat needy, but also loving and enjoyable to be around. The companion will have fun with them, and be willing to part with their energy. The two have a symbiotic relationship with differing weaknesses (PC neediness, companion slow/rest), but mutual benefits (PC constant high mood, companion speed improves over time). The mood bonuses fade over time, putting the player on the path of a light grey ending.
+
+Green measures the level of selfless love.
+
+Blue measures the level of results-orientedness. While aligned with rational choices, it is not exclusive towards the other two colors. However, being only blue means focusing on the gameplay elements more than the actual characters/story and the choices one makes. Neglecting the game for a long time can force one to gain a blue tint, as well as spending a lot of time optimizing items and money.
+A dark blue is someone who emotionlessly pursues direct goals and is willing to sacrifice anything to meet them. Managing to play the game like this without dying will give the greatest overall speed over time, and lead to the secret/bad/genocide ending.
+A light blue is someone who is uplifting and happy to move forward, but also has some care for others and takes emotions into account while planning, leading to greater overall happiness for both them and everyone around.
+
+
 
 ---------------
 
