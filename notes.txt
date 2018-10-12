@@ -10,6 +10,18 @@ WalkerJS notes:
 
 2018-10-12
 
+A word on nightly cutscenes.
+
+They represent the main character's thoughts in the evening, when he is setting into bed and ready for the day. The cutscenes show a sentence/thought at a time, and progress when clicked. Clicking transitions to next text and changes background tint (RBG moods), usually not touching the base mood color.
+
+Cutscene data is stored in a separate file, with 
+
+
+
+---------------
+
+2018-10-12
+
 More on colors.
 
 Black-White is a general mood factor. It basically measures the feelings of the main character on a scale between depressed and giddy. Generally the long-term changes to it are very gradual, but there can be a few events with huge impact. Resting, talking with the companion, and finding nice items give a good momentary boost.
@@ -21,8 +33,8 @@ A light red indicates that the main character is somewhat needy, but also loving
 Green measures the level of selfless love.
 
 Blue measures the level of results-orientedness. While aligned with rational choices, it is not exclusive towards the other two colors. However, being only blue means focusing on the gameplay elements more than the actual characters/story and the choices one makes. Neglecting the game for a long time can force one to gain a blue tint, as well as spending a lot of time optimizing items and money.
-A dark blue is someone who emotionlessly pursues direct goals and is willing to sacrifice anything to meet them. Managing to play the game like this without dying will give the greatest overall speed over time, and lead to the secret/bad/genocide ending.
-A light blue is someone who is uplifting and happy to move forward, but also has some care for others and takes emotions into account while planning, leading to greater overall happiness for both them and everyone around.
+A dark blue is someone who emotionlessly pursues direct goals and is willing to sacrifice anything to meet them. Managing to play the game like this without dying will give the greatest overall speed over time, and lead to the secret/bad/genocide-ish dark blue ending with lots of speed and breaking of the fourth wall, rendering the game permanently without the companion appearing. If the player manages to clear the game even under such harsh conditions, they have a choice of "resetting" and bringing the companion back to future playthroughs.
+A light blue is someone who is uplifting and happy to move forward, but also has some care for others and takes emotions into account while planning, leading to greater overall happiness for both them and everyone around. They will be friends with the companion, and lead them both to a life of abundance but no love or care for each other. The characters will see each other as strictly business partners, but find happiness from within and are content with the situation.
 
 
 
