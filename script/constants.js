@@ -11,9 +11,9 @@
 var wjs = wjs || {};
 
 (function () {
-
-  wjs.constants = {
-    DEBUG: true,
-    TEXT_COLOR_SWITCH_THRESHOLD: 137, // Text color based on HSP space Perceived Brightness
-  };
+  if (wjs.constants.LANGUAGE === "en_US") {
+    wjs.strings = {
+      gameStart: "asd",
+    };
+  }
 })();

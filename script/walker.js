@@ -12,7 +12,7 @@ var wjs = wjs || {};
 
 (function () {
 
-  var player = {
+  wjs.player = {
     forwardSteps: 0,
     backwardSteps: 0,
     get totalSteps() { return this.forwardSteps + this.backwardSteps; },
@@ -129,22 +129,7 @@ var wjs = wjs || {};
   }
 
   function startNewGame() {
-    document.getElementById("stepForwardButton").addEventListener("click", player.stepForward);
-    document.getElementById("stepBackwardButton").addEventListener("click", player.stepBackward);
-
-    document.getElementById("increaseMoodButton").addEventListener("click", player.changeMoodFunc(30));
-    document.getElementById("increaseMoodButtonR").addEventListener("click", player.changeMoodFunc(30, "r"));
-    document.getElementById("increaseMoodButtonG").addEventListener("click", player.changeMoodFunc(30, "g"));
-    document.getElementById("increaseMoodButtonB").addEventListener("click", player.changeMoodFunc(30, "b"));
-
-    document.getElementById("decreaseMoodButton").addEventListener("click", player.changeMoodFunc(-30));
-    document.getElementById("decreaseMoodButtonR").addEventListener("click", player.changeMoodFunc(-30, "r"));
-    document.getElementById("decreaseMoodButtonG").addEventListener("click", player.changeMoodFunc(-30, "g"));
-    document.getElementById("decreaseMoodButtonB").addEventListener("click", player.changeMoodFunc(-30, "b"));
-
-    document.getElementById("titleReturnButton").addEventListener("click", function() {
-      window.location.replace("./index.html");
-    });
+    wjs.events.addEventListeners();
 
     var elem = document.documentElement;
     elem.style.setProperty("--mood-background-color", "white");
@@ -191,15 +176,15 @@ var wjs = wjs || {};
   }
 
   function checkAssetLoad() {
+    console.log(wjs);
     if (
         wjs
-        && wjs.constants //
-//        && wjs.events    // Event handling for buttons, etc.
-//        && wjs.player    // Player object.
-//        && wjs.companion // In-game companion's object.
-//        && wjs.features  // In-game feature class and objects.
-//        && wjs.mapEvents //
-//        && wjs.strings   // In-game text, with some translation support.
+        && wjs.core       // Launcher, helper functions, etc.
+        && wjs.constants  //
+        && wjs.player     // Main character mega-object
+        && wjs.events     // Event handling for buttons, etc.
+        && wjs.messageBox //
+        && wjs.strings    // In-game text, with some translation support.
         // TODO: Check that image and sound assets are loaded.
     ) {
       window.clearInterval(intervalID);
