@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html id="root">
+<head>
+    <link rel="stylesheet" type="text/css" href="walker.css">
+</head>
+<body>
+    <div id="all-div" class="all-div gameplay-main-screen">
+
+        <div id="top-div-first" class="top-div">
+            <div id="screen" class="screen-area">This will be a mini-screen.</div>
+            <div id="message-box" class="messagebox">
+                It is difficult to see your surroundings.<br>You feel sluggish.<br>
+                Testtest-testtest-testtest-testtest-testtest<br>
+                Test-testtest-testtest-testtest-testtest-testtest-testtest-testtest
+            </div>
+        </div>
+
+
+        <div id="top-div-middle" class="top-div">
+            <button id="step-forward-button" class="gameplay button primary-action-button active ready">
+                step forward</button>
+            <br>
+            <button id="step-backward-button" class="gameplay button primary-action-button active ready">
+                step backward</button>
+            <br><br>
+
+            <button id="increase-mood-button" class="gameplay button primary-action-button">Increase mood x30</button>
+            <button id="decrease-mood-button" class="gameplay button primary-action-button">Decrease mood x30</button>
+            <br><br>
+
+            <button id="increase-mood-button-r" class="gameplay button primary-action-button">Increase mood-r x30</button>
+            <button id="decrease-mood-button-r" class="gameplay button primary-action-button">Decrease mood-r x30</button>
+            <button id="increase-mood-button-g" class="gameplay button primary-action-button">Increase mood-g x30</button>
+            <button id="decrease-mood-button-g" class="gameplay button primary-action-button">Decrease mood-g x30</button>
+            <button id="increase-mood-button-b" class="gameplay button primary-action-button">Increase mood-b x30</button>
+            <button id="decrease-mood-button-b" class="gameplay button primary-action-button">Decrease mood-b x30</button>
+            <br><br>
+
+            <button class="gameplay test-button button primary-action-button">(primary-action-button)</button>
+            <button class="gameplay test-button button primary-action-button ready">(primary-action-button ready)</button>
+            <button class="gameplay test-button button primary-action-button active">(primary-action-button active)</button>
+            <button class="gameplay test-button button primary-action-button inactive">(primary-action-button inactive)</button>
+            <button class="gameplay test-button button primary-action-button active inactive">(primary-action-button active inactive)</button>
+            <button class="gameplay test-button button primary-action-button ready active">(primary-action-button ready active)</button>
+            <br><br>
+
+            <button class="gameplay test-button button primary-action-button">button with very long text (2 lines)</button>
+            <button class="gameplay test-button button primary-action-button">button with very long text (should be more than 2 lines)</button><br>
+        </div>
+
+
+        <div id="top-div-last" class="top-div">
+            <div id="status-area">This area will contain icons and stuff.</div>
+            <div id="companion-message-box" class="messagebox companion-element">
+                char2 thoughts...<br>
+                veeeery long line of text for long line of text for testing veeeery long line of text for testing
+                
+                veeeery long line of text for long line of text for testing veeeery long line of text for testing
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer-area">
+        <button id="title-return-button">-back to title</button><br>
+        <!-- Include buttons for pausing, sound on/off, manual save game, return to title, GitHub, etc etc -->
+    </div>
+
+    <!-- Add scripts to be loaded here. -->
+    <script src="script/constants.js" charset="utf-8"></script>
+    <script src="script/strings.js" charset="utf-8"></script>
+    <script src="script/walker-core.js" charset="utf-8"></script>
+</body>
+</html>
