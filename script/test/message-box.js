@@ -20,7 +20,7 @@ window.wjs = window.wjs || {};
     pushImportant: function(string) {
       this.elem.innerHTML = "<span class='message message-important'>" + string + "</span><br>" + this.elem.innerHTML;
     },
-    pushDebug: function(string) { if (wjs.constants.DEBUG) messageBox.pushMessage(string); },
+    pushDebug: function(string) { if (wjs.constants.DEBUG) wjs.messageBox.push(string); },
     pushCompanion: function(string) {
       this.companionElem.innerHTML = "<span class='message message-fadeout'>" + string + "</span><br>" + this.companionElem.innerHTML;
     },

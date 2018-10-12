@@ -19,7 +19,7 @@ window.wjs = window.wjs || {};
     get totalSteps() { return this.forwardSteps + this.backwardSteps; },
     get position() { return this.forwardSteps - this.backwardSteps; },
 
-    mood: 20, /* 0 to 155; individual moods 0 if mood < 100, then from 0 to 100 */
+    mood: 25, /* 0 to 155; individual moods 0 if mood < 100, then from 0 to 100 */
     moodRed: 0,   // represents passion, love, bonds
     moodGreen: 0, // represents optimism, wellbeing, altruism
     moodBlue: 0,  // represents rationality, thinking, calmness
@@ -39,17 +39,17 @@ window.wjs = window.wjs || {};
     stepForward: function() {
       wjs.player.forwardSteps += 1;
       if (wjs.player.totalSteps <= 1)
-      messageBox.pushDebug("You have taken your first step!");
-      else messageBox.pushDebug("You have taken a step " + wjs.player.totalSteps + " times!");
+      wjs.messageBox.pushDebug("You have taken your first step!");
+      else wjs.messageBox.pushDebug("You have taken a step " + wjs.player.totalSteps + " times!");
       updateStatus();
     },
 
     stepBackward: function() {
       wjs.player.backwardSteps += 1;
       if (wjs.player.backwardSteps <= 1)
-        messageBox.pushDebug("You took a step back!");
+        wjs.messageBox.pushDebug("You took a step back!");
       else
-        messageBox.pushDebug("You have taken a step back " + wjs.player.backwardSteps + " times!");
+        wjs.messageBox.pushDebug("You have taken a step back " + wjs.player.backwardSteps + " times!");
       updateStatus();
     },
 
@@ -59,19 +59,19 @@ window.wjs = window.wjs || {};
       if (color === "r") {
         wjs.player.moodRed += amount;
         wjs.player.moodRed = Math.min(100, Math.max(wjs.player.moodRed, 0));
-        messageBox.pushDebug("Changed moodRed by " + amount);
+        wjs.messageBox.pushDebug("Changed moodRed by " + amount);
       } else if (color === "g") {
         wjs.player.moodGreen += amount;
         wjs.player.moodGreen = Math.min(100, Math.max(wjs.player.moodGreen, 0));
-        messageBox.pushDebug("Changed moodGreen by " + amount);
+        wjs.messageBox.pushDebug("Changed moodGreen by " + amount);
       } else if (color === "b") {
         wjs.player.moodBlue += amount;
         wjs.player.moodBlue = Math.min(100, Math.max(wjs.player.moodBlue, 0));
-        messageBox.pushDebug("Changed moodBlue by " + amount);
+        wjs.messageBox.pushDebug("Changed moodBlue by " + amount);
       } else {
         wjs.player.mood += amount;
         wjs.player.mood = Math.min(155, Math.max(wjs.player.mood, 0));
-        messageBox.pushDebug("Changed mood by " + amount);
+        wjs.messageBox.pushDebug("Changed mood by " + amount);
       }
       updateStatus();
       updateMoodEffects();
