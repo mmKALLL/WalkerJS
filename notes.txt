@@ -6,6 +6,158 @@ Let's learn Haskell, Rust, Python, Go, PureScript, TypeScript, Crystal!
 WalkerJS notes:
 
 
+
+---------------
+
+2018-10-13
+
+Title screen and pre-game UI/UX.
+
+The first load should have a black-on-white full screen reminder, which requires a mouse click or button press anywhere:
+"This game is not suitable for children.
+The game relies on color and may not view properly with color-changing or high-contrast settings. However, accessibility settings are provided in the options menu."
+
+The text should fade-in and fade-out. If no action is taken for 3 seconds, fade in "Click/tap to continue"
+
+After that, there are two screens with large-font opening text - Money Match Games presents (2s) - The 40th game by Esa Koskinen (2s) - (enter main menu)
+
+Main menu has white background, black text and buttons. New/load game buttons, and an options menu are available.
+
+Options menu has two panels. On the left it lets the player change master volume, enter fullscreen, enable debug, or access accessibility menu, and the right has a mention on game being playable with mouse only.
+
+
+---------------
+
+2018-10-12
+
+A word on nightly cutscenes.
+
+They represent the main character's thoughts in the evening, when they are setting into bed and done for the day. Random thoughts swirl around their head, with mild tiredness giving way for true (and possibly dark/suppressed) feelings to come out.
+
+The cutscenes show a sentence/thought at a time, and progress when clicked. Clicking does a smooth and slow sideways transition to next text and changes background tint (RBG moods), usually not touching the base mood color. The cutscenes develop the story and imagery behind the relationship and world by posing questions the main character has about their situation. Reaching conclusions to questions is less common, mainly the character decides what to do, based on their mood level/pattern/situation.
+
+Cutscene data is stored in a separate file, with referrals to (translatable) game text variables and hardcoded data on line-by-line background colors, transition speeds, and font size/style. Each cutscene should also contain a function that tests whether cutscene is accessible (including tests for date range, companion presence and relationship, held items, mood levels, distance in the world). Finally, a cutscene should contain a function that runs when the cutscene is seen, for example improving/decreasing main character mood, unlocking new buttons or interface tabs, or providing them with an item.
+
+At the end of the day, an unseen cutscene is chosen at random from the possibilities (including generic mood-dependent ones which can be seen multiple times). A cutscene can also be flagged as high-priority, which will display on the same night when triggered.
+
+
+Each cutscene should also be flagged as either positive or negative. This is used when stitching multiple cutscenes together, which can be helpful for neutral non-priority things discussing the day's events. A "positive follow-up" is used when both cutscenes are either positive or negative, and a "negative follow-up" is used when their mood differs.
+Positive - ("Furthermore," "Additionally," ", not to mention that" "In addition to that," "Even worse, / better,")
+Negative - ("At any rate," "Despite that," "Regardless," "However,")
+
+Why do this? Example:
+
+(I was pretty tired today, however, really glad to have found a sweet item!) vs
+(She's dead. This sucks. Furthermore, really glad to have found a sweet item!)
+
+These display with a neutral BG color, dependent on mood.
+
+
+---------------
+
+2018-10-12
+
+Even more on colors.
+
+There are also blend colors - yellow, purple, aqua, and white.
+Regular mood endings shift from black (rejected companionship on all occasions), to dark grey (met but parted with companion early, default), to light grey (failed light red).
+
+
+At the end of either black or dark grey ending, a client-server connection is made, where the player receives a player-submitted suggestion (if server is available and not undefined, prewritten hint otherwise), and can submit their own (using a single-line text field). Various checks are made (spelling and redline against SOWPODS, and silent rejection if swearwords are used). The text submission has a single sentence maximum.
+The main character says "Should I have done things differently in life? Did I do a mistake somewhere? Yeah, maybe I should have tried {insert a randomly picked player submission, trimmed and in noncapital letters}."
+"...Or maybe not. I'm not sure if that sounds like a good idea. God, if you actually exist... I pray to you, please tell me what I should have done differently?"
+The submission text field opens, with text "Your answer to the plea: [    ]"
+
+
+---------------
+
+2018-10-12
+
+More on colors.
+
+Black-White is a general mood factor. It basically measures the feelings of the main character on a scale between depressed and giddy. Generally the long-term changes to it are very gradual, but there can be a few events with huge impact. Resting, talking with the companion, and finding nice items give a good momentary boost.
+
+
+Red measures the level of selfish love. Basically this is the neediness of the main character, and their want/lust towards the companion or other characters.
+A dark red tint hints towards very needy behavior, a deep and strong desire towards approval and gaining a sense of safety by interacting with the companion. The companion finds this behavior a bit off-putting - while responding sympathetically at first, it will creep them out as the main character becomes more and more addicted to their presence (enforced by stronger but shorter positive mood swings from asking for hugs). The main character considers whether it is wrong of them to feel this way, to ask for closeness and approval when they really need it - presenting a yes/no choice to the player.
+The player answering that being needy is okay will only make them more needy. This forcing the companion to leave them and puts the player in a tight spot (possibly suicide ending). Surviving leads to dark red ending, with main character feeling a deep lack of support and leaving them alone to lead an unsatisfied life.
+Answering that it is not okay will force the player's red tint to subside and their addiction to lower over time. The player will have an option to honestly discuss this. If they don't, things will continue dark red and companion leaves them, but if they do, the companion will be supportive (although apprehensive and exhausted) of them. In this, the main character will regain their natural mood functionality, and the companion will not leave them. However, the companion will become depressed and impaired instead, slowing down. Ditching them will put the player on a blue course, while staying will put them on a green one.
+A light red indicates that the main character is somewhat needy, but also loving and enjoyable to be around. The companion will have fun with them, and be willing to part with their energy. The two have a symbiotic relationship with differing weaknesses (PC neediness, companion slow/rest), but mutual benefits (PC constant high mood, companion speed improves over time). The mood bonuses fade over time, putting the player on the path of a light grey ending.
+However, a slightly more romantic light red ending can be achieved if the player repeatedly puts in effort for the companion, sacrificing a lot of game progress by doing so. (This could happen by companion falling ill, putting the player in a tight spot and testing if they will follow through by losing many resources they worked hard to attain). If the player gives up early on the test, they will receive light grey ending, otherwise the characters will live happily together, supporting and loving each other despite their lack of money and resources.
+
+
+Green measures the level of selfless feelings. This indicates a want for the main character to do things for the companion and others. At the end of a green path, the player should be tested, with the companion wanting to do increasingly selfish acts and the player choosing whether to part from them or to be together.
+A dark green can indicate several things, such as need for companion approval through self-sacrifice, or overboard altruism with no self-regard, or selfless acts with ulterior motives. Basically it indicates doing things for others, not out of direct love towards them, but because of strong inner drive. However, this leaves the main character in a neglected state, slowly destroying their capability to progress and even drives away the people they worked so hard to please. If the companion is with them, their relationship turns borderline abusive, with completely one-sided "love". If the companion is gone, it ends up with exhaustion and burn-out at trying to improve the world, ultimately reaching neither the main character nor the world's goals. The main character should make this realization in the final cutscene, and lament their loneliness.
+A light green indicates a platonic friendship, which doesn't develop into romantic love. The player character does things for their companion, while taking care of their own mood and feelings. The game should provide a possibility to level up the companion speed by sacrificing one's mood permanently. However, when rarely used, one should end up with a light green ending, with them living their days happily as travellers with a love towards the world. When used a lot while staying at high mood, the player transitions to blue routes in the final days. When used a lot without staying at high mood, a dark green ending ensues. If the player starts caring for the world over their companion once the other starts being selfish or requiring game progression over altruism, the companion leaves. This light green variant ends with the main character realizing that it feels good to help others, finding balance between their actions and the world, and attains inner peace.
+
+
+
+Blue measures the level of results-orientedness. While aligned with rational choices, it is not exclusive towards the other two colors. However, being only blue means focusing on the gameplay elements more than the actual characters/story and the choices one makes. Neglecting the game for a long time can force one to gain a blue tint, as well as spending a lot of time optimizing items and money. Ditching the partner early (before realizing their significance) does not gain blue tint, but ditching them late does.
+A dark blue is someone who emotionlessly pursues direct goals and is willing to sacrifice anything to meet them. The companion will be left behind early. Managing to play the game like this without dying will give the greatest overall speed over time, and lead to the secret/bad/genocide-ish dark blue ending with lots of speed and breaking of the fourth wall, rendering the game permanently without the companion appearing. If the player manages to clear the game even under such harsh conditions, they have a choice of "resetting" and bringing the companion back to future playthroughs.
+A light blue is someone who is uplifting and happy to move forward, but also has some care for others and takes emotions into account while planning, leading to greater overall happiness for both them and everyone around. They will be friends with the companion, and lead them both to a life of abundance but no love or physical care for each other. The characters will see each other as strictly business partners, but find happiness from within and are content with the situation.
+
+
+
+---------------
+
+2018-10-12
+
+Game goal and idea, from a story perspective.
+
+Playable character (PC) is suffering from depression, and needs to balance mood with progression. At times, they may suffer from a bad day, with low "spoons" available. At such times, the companion may become slightly frustrated with the PC, first asking them to hurry up, then noting that the slowdown is not characteristic of them, and finally "What's wrong with you? You were running just fine yesterday, but we've barely made progress today!"
+
+Companion is not without sympathy, but is fairly results-oriented and has good relationships with many friends. Unless player is very skilled or has made a particular chain of choices, they leave the PC with little thought, thinking that everyone in the world has a support network and thus the PC will be fine without them. They are clearly extroverted, and absorb the good vibes from their surroundings, having a bit of difficulty understanding introversion or depression.
+
+
+
+---------------
+
+2018-06-12
+
+Straining.
+
+Running really fast for a long period of time puts strain on the body. At some point after reaching a high speed and running for a while without rest, the main character starts accumulating strain. With strain, first the screen starts periodically getting -30 mood pulses every 2-3 seconds (like heartbeat), then at shorter intervals and accompanied with sound effects, and finally the character "breaks", the screen goes deep red for a moment and starts fading back. Permanent -30 mood penalty, and one of the buttons the player had is randomly disabled.
+
+The player can recover one of the disabled buttons by resting for 1 day (but be left with mood penalty), or avoid getting any penalty by resting for 2 days. However, time is precious...
+
+This system makes the game more dynamic, and makes the player think about straining themselves too much despite their important (?) goal. Strain event should be dramatic and scary, to heighten the emotional impact. The sound effects are crucial.
+
+Just like in real life, injuries can also be immediate and surprising. They may leave a permanent disability, leading to a mood impact due to slow progress. This should be shocking to players, and put them to reconsider their attitude towards topics of safety and disability.
+
+
+Competitions / items.
+
+Every now and then, main character will come across items with random stats a la Diablo etc. These items will have fairly strong and varied effects, changing gameplay strategies with their combinations. Each item should have a strong upside, with a moderate-high downside. Up to three items can be equipped at once, and the items can be sold for money (!). Finding great combinations is one of the key interests.
+
+There can also be running competitions with various goals, e.g. longest distance in a given time or shortest time for a given distance, with or without energy replenishment, with periodic energy replenishment, with or without weights (passive, absolute number penalty to speed), etc. Using items to win money at these events can be of strategic interest. Player may also be interested in trade-off of selling an item to get immediate cash, since future competitions may or may not require the item.
+
+Item effects may also include faster recovery of specific actions. Faster recovery of "step forward" is particularly valuable.
+
+
+---------------
+
+2018-06-09
+
+Core gameplay is as follows.
+
+The game is about balancing moving forward, manging your mood, and making sure you don't run out of energy. This is accomplished be exchanging each resource for others in a fairly controlled but somewhat unpredictable way. The game should not be frustrating, but provide food for thought; the idea is that through their interpretation of the game mechanics, the player may gain insight about their own lives or of those around them. A core idea is that the main character is highly introverted, while their companion is extroverted.
+
+Energy - spend by moving forward and being social, replenished by rest and being alone.
+Mood - spend by not making progress or through events, gain by being social or through events.
+Fatigue - spend through time, gain by spending money on food. Affects energy use.
+Sleep - lose mood if sleeping in poor conditions, gain mood if sleeping in good conditions (risk/reward thinking, paying money for a premium)
+
+Essentially, not moving forward will conserve energy at the cost of mood, while moving forward and interacting with the world costs energy but improves mood. Furthermore, mood has three types, which the player can influence through their choices. These mood changes have various effects on the events that the player will come across, as well as their relation with the companion.
+
+The idea is to provide cognitive dissonance through the breakup with the companion character; a "loving/emotional" player will come across heartbreak through poverty/disease (prompting them to be rational), a "generous" player will come across heartbreak through perceived clinginess and poor relationship balance/dynamic (prompting them to be emotional), and a "rational" player will have to choose between money or the companion (prompting them to be generous). A "calculative", super efficient player will have the choice between a few extra stat points and mood immunity, but they need to harm the environment with gradually more impactful selfish acts, eventually killing the companion to achieve the highest performance. The main character will question their choices ("what was it all for..?"), and ultimately take their own life.
+
+The general "goal" is to advance through the game, moving forward as much as possible each day. Low mood acts as a multiplier for energy consumption, which encourages to move forward, but this is kept in check by increasing fatigue and mood loss multiplier when too much is happening in a short time. In other words, the player character gets exhausted if they encounter constant social situations, despite it being beneficial for mood in the short term.
+
+Another goal is to control hunger and lodging; by sleeping outside with a hungry stomach, one naturally loses a lot of mood. On the other hand, searching for food or paying for accommodation costs time and money respectively. Money can be gained by trading real-world time for money, the rate and maximum amount of which depends on location.
+
+One day in-game takes around two to ten minutes to go through, with a 20-50 sec cutscene. With 30 days, the whole game takes about 150-200 minutes. Endings are varied and depend on general mood and choices.
+
+
 ---------------
 
 2018-04-16
@@ -108,7 +260,7 @@ Sorry, but I really need to go ahead. Do your best now, OK? (The girl picks up t
 
 
 (You catch up, medium speed)
-Encounter as traders, she doesn't remember you, rejection
+Encounter as traders, she doesn't remember you, rejection, deep depression and continue forever with low mood
 
 (You catch up, insane speed)
 (She is dead, and you go back in time)

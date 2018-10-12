@@ -9,9 +9,14 @@
       "browser": true
     },
 
+    "globals": {
+      "wjs": true
+    },
+
     "rules": {
       "quotes": ["warn", "double"],
-      "semi": "warn"
+      "semi": "warn",
+      "padded-blocks": "off"
     }
   }
 }

@@ -6,6 +6,7 @@ Made as an exercise using vanilla JavaScript, because why not. Currently in very
 
 For testing, can be tried out at https://mmkalll.github.io/walker-js/
 
+```
 /* *****************************************************************************************\  
 ** Walker - Path to Darkness  
 ** A game about walking the long road of life.  
@@ -13,8 +14,8 @@ For testing, can be tried out at https://mmkalll.github.io/walker-js/
 **  
 ** NOT FOR REDISTRIBUTION OF ANY KIND. ALL RIGHTS RESERVED.  
 ** (c) 2017-2018 Esa Koskinen  
-\\\* *****************************************************************************************/  
-
+\* *****************************************************************************************/  
+```
 
 ## Roadmap
 ```
