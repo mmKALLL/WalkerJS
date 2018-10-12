@@ -21,7 +21,7 @@ window.wjs = window.wjs || {};
       document.getElementById("increase-mood-button-g").addEventListener("click", wjs.player.changeMoodFunc(50, "g"));
       document.getElementById("increase-mood-button-b").addEventListener("click", wjs.player.changeMoodFunc(50, "b"));
 
-      document.getElementById("decrease-mood-button").addEventListener("click", wjs.player.changeMoodFunc(-50));
+      document.getElementById("decrease-mood-button").addEventListener("click", wjs.player.changeMoodFunc(-52));
       document.getElementById("decrease-mood-button-r").addEventListener("click", wjs.player.changeMoodFunc(-50, "r"));
       document.getElementById("decrease-mood-button-g").addEventListener("click", wjs.player.changeMoodFunc(-50, "g"));
       document.getElementById("decrease-mood-button-b").addEventListener("click", wjs.player.changeMoodFunc(-50, "b"));
