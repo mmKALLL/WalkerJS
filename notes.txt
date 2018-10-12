@@ -19,7 +19,7 @@ The game relies on color and may not view properly with color-changing or high-c
 
 The text should fade-in and fade-out. If no action is taken for 3 seconds, fade in "Click/tap to continue"
 
-After that, there are two screen with large-font opening text - Money Match Games presents - The 40th game by Esa Koskinen - (enter main menu)
+After that, there are two screens with large-font opening text - Money Match Games presents (2s) - The 40th game by Esa Koskinen (2s) - (enter main menu)
 
 Main menu has white background, black text and buttons. New/load game buttons, and an options menu are available.
 
