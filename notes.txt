@@ -12,10 +12,25 @@ WalkerJS notes:
 
 A word on nightly cutscenes.
 
-They represent the main character's thoughts in the evening, when he is setting into bed and ready for the day. The cutscenes show a sentence/thought at a time, and progress when clicked. Clicking transitions to next text and changes background tint (RBG moods), usually not touching the base mood color.
+They represent the main character's thoughts in the evening, when they are setting into bed and done for the day. Random thoughts swirl around their head, with mild tiredness giving way for true (and possibly dark/suppressed) feelings to come out.
 
-Cutscene data is stored in a separate file, with 
+The cutscenes show a sentence/thought at a time, and progress when clicked. Clicking does a smooth and slow sideways transition to next text and changes background tint (RBG moods), usually not touching the base mood color. The cutscenes develop the story and imagery behind the relationship and world by posing questions the main character has about their situation. Reaching conclusions to questions is less common, mainly the character decides what to do, based on their mood level/pattern/situation.
 
+Cutscene data is stored in a separate file, with referrals to (translatable) game text variables and hardcoded data on line-by-line background colors, transition speeds, and font size/style. Each cutscene should also contain a function that tests whether cutscene is accessible (including tests for date range, companion presence and relationship, held items, mood levels, distance in the world).
+
+At the end of the day, an unseen cutscene is chosen at random from the possibilities (including generic mood-dependent ones which can be seen multiple times). A cutscene can also be flagged as high-priority, which will display on the same night when triggered.
+
+
+Each cutscene should also be flagged as either positive or negative. This is used when stitching multiple cutscenes together, which can be helpful for neutral non-priority things discussing the day's events. A "positive follow-up" is used when both cutscenes are either positive or negative, and a "negative follow-up" is used when their mood differs.
+Positive - ("Furthermore," "Additionally," ", not to mention that" "In addition to that," "Even worse, / better,")
+Negative - ("At any rate," "Despite that," "Regardless," "However,")
+
+Why do this? Example:
+
+(I was pretty tired today, however, really glad to have found a sweet item!) vs
+(She's dead. This sucks. Furthermore, really glad to have found a sweet item!)
+
+These display with a neutral BG color, dependent on mood.
 
 
 ---------------
@@ -26,11 +41,15 @@ More on colors.
 
 Black-White is a general mood factor. It basically measures the feelings of the main character on a scale between depressed and giddy. Generally the long-term changes to it are very gradual, but there can be a few events with huge impact. Resting, talking with the companion, and finding nice items give a good momentary boost.
 
+
 Red measures the level of selfish love. Basically this is the neediness of the main character, and their want/lust towards the companion or other characters. A dark red tint hints towards very needy behavior, a deep and strong desire towards approval and gaining a sense of safety by interacting with the companion. The companion finds this behavior a bit off-putting - while responding sympathetically at first, it will creep them out as the main character becomes more and more addicted to their presence (enforced by stronger but shorter positive mood swings from asking for hugs).
 The main character considers whether it is wrong of them to feel this way, to ask for closeness and approval when they really need it - presenting a choice to the player. Answering that it is okay will make them more needy, forcing the companion to leave them and putting the player in a tight spot (possibly suicide ending). Answering that it is not okay will force the player's red tint to subside and their addiction to lower over time. The player will have an option to honestly discuss this, and the companion will be supportive (although apprehensive and exhausted) of them. In this, the main character will regain their natural mood functionality, and the companion will not leave them, but the companion will become depressed and impaired instead, slowing down. Ditching them will put the player on a blue course, while staying will put them on a green one.
 A light red indicates that the main character is somewhat needy, but also loving and enjoyable to be around. The companion will have fun with them, and be willing to part with their energy. The two have a symbiotic relationship with differing weaknesses (PC neediness, companion slow/rest), but mutual benefits (PC constant high mood, companion speed improves over time). The mood bonuses fade over time, putting the player on the path of a light grey ending.
 
+
 Green measures the level of selfless love.
+
+
 
 Blue measures the level of results-orientedness. While aligned with rational choices, it is not exclusive towards the other two colors. However, being only blue means focusing on the gameplay elements more than the actual characters/story and the choices one makes. Neglecting the game for a long time can force one to gain a blue tint, as well as spending a lot of time optimizing items and money.
 A dark blue is someone who emotionlessly pursues direct goals and is willing to sacrifice anything to meet them. Managing to play the game like this without dying will give the greatest overall speed over time, and lead to the secret/bad/genocide-ish dark blue ending with lots of speed and breaking of the fourth wall, rendering the game permanently without the companion appearing. If the player manages to clear the game even under such harsh conditions, they have a choice of "resetting" and bringing the companion back to future playthroughs.
