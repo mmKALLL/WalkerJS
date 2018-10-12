@@ -19,7 +19,6 @@ Companion is not without sympathy, but is fairly results-oriented and has good r
 
 
 
-
 ---------------
 
 2018-06-12
@@ -31,6 +30,8 @@ Running really fast for a long period of time puts strain on the body. At some p
 The player can recover one of the disabled buttons by resting for 1 day (but be left with mood penalty), or avoid getting any penalty by resting for 2 days. However, time is precious...
 
 This system makes the game more dynamic, and makes the player think about straining themselves too much despite their important (?) goal. Strain event should be dramatic and scary, to heighten the emotional impact. The sound effects are crucial.
+
+Just like in real life, injuries can also be immediate and surprising. They may leave a permanent disability, leading to a mood impact due to slow progress. This should be shocking to players, and put them to reconsider their attitude towards topics of safety and disability.
 
 
 Competitions / items.
@@ -168,7 +169,7 @@ Sorry, but I really need to go ahead. Do your best now, OK? (The girl picks up t
 
 
 (You catch up, medium speed)
-Encounter as traders, she doesn't remember you, rejection
+Encounter as traders, she doesn't remember you, rejection, deep depression and continue forever with low mood
 
 (You catch up, insane speed)
 (She is dead, and you go back in time)
