@@ -9,6 +9,19 @@ WalkerJS notes:
 
 ---------------
 
+2018-10-12
+
+Game goal and idea, from a story perspective.
+
+Playable character (PC) is suffering from depression, and needs to balance mood with progression. At times, they may suffer from a bad day, with low "spoons" available. At such times, the companion may become slightly frustrated with the PC, first asking them to hurry up, then noting that the slowdown is not characteristic of them, and finally "What's wrong with you? You were running just fine yesterday, but we've barely made progress today!"
+
+Companion is not without sympathy, but is fairly results-oriented and has good relationships with many friends. Unless player is very skilled or has made a particular chain of choices, they leave the PC with little thought, thinking that everyone in the world has a support network and thus the PC will be fine without them. They are clearly extroverted, and absorb the good vibes from their surroundings, having a bit of difficulty understanding introversion or depression.
+
+
+
+
+---------------
+
 2018-06-12
 
 Straining.
