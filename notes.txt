@@ -60,7 +60,17 @@ These display with a neutral BG color, dependent on mood.
 Even more on colors.
 
 There are also blend colors - yellow, purple, aqua, and white.
-Regular mood endings shift from black (rejected companionship on all occasions), to dark grey (met but parted with companion early, default), to light grey (failed light red).
+
+Yellow - Red and green. The characters get in a happy romantic relationship, focusing on themselves. Difficult to get.
+Purple - Red and blue. The characters start as business partners but end up in a cold relationship. Even more difficult.
+Aqua - Green and blue. Basically the main character places the world on the highest priority, maximizing utility.
+White - The ultimate happy ending. Requires very careful balancing of all the colors, familiarity with story, and skilled strategy. The main character ends their quest happily and won't time travel again.
+
+
+Regular "colorless" mood endings are black, dark grey, and light grey.
+Black features a "game over" before the time is up, basically by rejecting the companion on all occasions and falling into despair, leading into suicide. This is the regular "bad ending".
+Dark grey is the typical "first playthrough ending", which requires meeting and teaming up but parting with the girl early, before the player has an idea of the companion's importance. It is the regular ending, induced for most players by losing and getting Black ending, then trying again but attempting to stay alive.
+Light grey is the failed light red ending. It is a neutral ending that may or may not involve the companion, but which has a general "meh" feeling to it, as the characters live happily but feel that there is more that they could have done.
 
 
 At the end of either black or dark grey ending, a client-server connection is made, where the player receives a player-submitted suggestion (if server is available and not undefined, prewritten hint otherwise), and can submit their own (using a single-line text field). Various checks are made (spelling and redline against SOWPODS, and silent rejection if swearwords are used). The text submission has a single sentence maximum.
@@ -140,7 +150,7 @@ Item effects may also include faster recovery of specific actions. Faster recove
 
 Core gameplay is as follows.
 
-The game is about balancing moving forward, manging your mood, and making sure you don't run out of energy. This is accomplished be exchanging each resource for others in a fairly controlled but somewhat unpredictable way. The game should not be frustrating, but provide food for thought; the idea is that through their interpretation of the game mechanics, the player may gain insight about their own lives or of those around them. A core idea is that the main character is highly introverted, while their companion is extroverted.
+The game is about balancing moving forward, manging your mood, and making sure you don't run out of energy. This is accomplished be exchanging each resource for others in a fairly controlled but somewhat unpredictable way. The game should not be frustrating, but provide food for thought; the idea is that through their interpretation of the game mechanics, the player may gain insight about their own lives or of those around them. A core idea is that the main character is highly introverted, maybe even depressed or suicidal, while their companion is extroverted.
 
 Energy - spend by moving forward and being social, replenished by rest and being alone.
 Mood - spend by not making progress or through events, gain by being social or through events.
