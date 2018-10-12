@@ -105,8 +105,8 @@ window.wjs = window.wjs || {};
   }
 
   function updateStatus() {
-    var elem = document.getElementById("statusArea");
-    elem.innerHTML =  "You have taken " + wjs.player.totalSteps + " steps.<br>" +
+    var elem = document.getElementById("status-area");
+    elem.innerHTML = "You have taken " + wjs.player.totalSteps + " steps.<br>" +
     "Your current position is " + wjs.player.position + ".<br>" +
     "Your current mood is " + wjs.player.mood + ".<br>";
   }
