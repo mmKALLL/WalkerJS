@@ -16,12 +16,12 @@ window.wjs = window.wjs || {};
       document.getElementById("step-forward-button").addEventListener("click", wjs.player.stepForward);
       document.getElementById("step-backward-button").addEventListener("click", wjs.player.stepBackward);
 
-      document.getElementById("increase-mood-button").addEventListener("click", wjs.player.changeMoodFunc(52));
+      document.getElementById("increase-mood-button").addEventListener("click", wjs.player.changeMoodFunc(31));
       document.getElementById("increase-mood-button-r").addEventListener("click", wjs.player.changeMoodFunc(50, "r"));
       document.getElementById("increase-mood-button-g").addEventListener("click", wjs.player.changeMoodFunc(50, "g"));
       document.getElementById("increase-mood-button-b").addEventListener("click", wjs.player.changeMoodFunc(50, "b"));
 
-      document.getElementById("decrease-mood-button").addEventListener("click", wjs.player.changeMoodFunc(-52));
+      document.getElementById("decrease-mood-button").addEventListener("click", wjs.player.changeMoodFunc(-31));
       document.getElementById("decrease-mood-button-r").addEventListener("click", wjs.player.changeMoodFunc(-50, "r"));
       document.getElementById("decrease-mood-button-g").addEventListener("click", wjs.player.changeMoodFunc(-50, "g"));
       document.getElementById("decrease-mood-button-b").addEventListener("click", wjs.player.changeMoodFunc(-50, "b"));
