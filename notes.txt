@@ -23,7 +23,15 @@ After that, there are two screens with large-font opening text - Money Match Gam
 
 Main menu has white background, black text and buttons. New/load game buttons, and an options menu are available.
 
-Options menu has two panels. On the left it lets the player change master volume, enter fullscreen, enable debug, or access accessibility menu, and the right has a mention on game being playable with mouse only.
+Options menu has two panels. On the left it lets the player change master volume, enter fullscreen, enable debug, or access accessibility menu, and the right has a mention on game being playable with just the mouse.
+
+Starting a new game darkens the screen, and displays a cutscene. Text scrolls automatically. There is a slight screen shake, and the screen is overtaken by gradually less transparent spiral-3, starting to obscure text at the God part. The screen shake intensifies and screen whites out in an instant (starting from center).
+"I can't live on like this...
+I need to do something about this messed up situation...!
+Please, God, guide me...
+It can't end like thi--"
+
+After several seconds of blinding white, the first button appears and screen starts adjusting to mood-based black.
 
 
 ---------------
@@ -62,9 +70,9 @@ Even more on colors.
 There are also blend colors - yellow, purple, aqua, and white.
 
 Yellow - Red and green. The characters get in a happy romantic relationship, focusing on themselves. Difficult to get.
-Purple - Red and blue. The characters start as business partners but end up in a cold relationship. Even more difficult.
-Aqua - Green and blue. Basically the main character places the world on the highest priority, maximizing utility.
-White - The ultimate happy ending. Requires very careful balancing of all the colors, familiarity with story, and skilled strategy. The main character ends their quest happily and won't time travel again.
+Purple - Red and blue. The characters start as business partners but end up in a cold, needy relationship, breaking up.
+Aqua - Green and blue. Basically the main character places the world on the highest priority, maximizing utility alone.
+White - The ultimate happy ending. Requires very careful balancing of all the colors, familiarity with story, and skilled strategy. They realize their situation before witnessing the partner's loss, and gain the time leap ability. The main character ends their quest happily and won't time travel again.
 
 
 Regular "colorless" mood endings are black, dark grey, and light grey.
