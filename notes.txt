@@ -6,6 +6,14 @@ Let's learn Haskell, Rust, Python, Go, PureScript, TypeScript, Crystal!
 WalkerJS notes:
 
 
+2019-07-07
+
+The player IS the companion!
+
+
+Days until death -counter:
+39 days until death
+
 
 ---------------
 
@@ -97,21 +105,31 @@ Black-White is a general mood factor. It basically measures the feelings of the 
 
 
 Red measures the level of selfish love. Basically this is the neediness of the main character, and their want/lust towards the companion or other characters.
+
 A dark red tint hints towards very needy behavior, a deep and strong desire towards approval and gaining a sense of safety by interacting with the companion. The companion finds this behavior a bit off-putting - while responding sympathetically at first, it will creep them out as the main character becomes more and more addicted to their presence (enforced by stronger but shorter positive mood swings from asking for hugs). The main character considers whether it is wrong of them to feel this way, to ask for closeness and approval when they really need it - presenting a yes/no choice to the player.
+
 The player answering that being needy is okay will only make them more needy. This forcing the companion to leave them and puts the player in a tight spot (possibly suicide ending). Surviving leads to dark red ending, with main character feeling a deep lack of support and leaving them alone to lead an unsatisfied life.
+
 Answering that it is not okay will force the player's red tint to subside and their addiction to lower over time. The player will have an option to honestly discuss this. If they don't, things will continue dark red and companion leaves them, but if they do, the companion will be supportive (although apprehensive and exhausted) of them. In this, the main character will regain their natural mood functionality, and the companion will not leave them. However, the companion will become depressed and impaired instead, slowing down. Ditching them will put the player on a blue course, while staying will put them on a green one.
+
 A light red indicates that the main character is somewhat needy, but also loving and enjoyable to be around. The companion will have fun with them, and be willing to part with their energy. The two have a symbiotic relationship with differing weaknesses (PC neediness, companion slow/rest), but mutual benefits (PC constant high mood, companion speed improves over time). The mood bonuses fade over time, putting the player on the path of a light grey ending.
+
 However, a slightly more romantic light red ending can be achieved if the player repeatedly puts in effort for the companion, sacrificing a lot of game progress by doing so. (This could happen by companion falling ill, putting the player in a tight spot and testing if they will follow through by losing many resources they worked hard to attain). If the player gives up early on the test, they will receive light grey ending, otherwise the characters will live happily together, supporting and loving each other despite their lack of money and resources.
 
 
+
 Green measures the level of selfless feelings. This indicates a want for the main character to do things for the companion and others. At the end of a green path, the player should be tested, with the companion wanting to do increasingly selfish acts and the player choosing whether to part from them or to be together.
+
 A dark green can indicate several things, such as need for companion approval through self-sacrifice, or overboard altruism with no self-regard, or selfless acts with ulterior motives. Basically it indicates doing things for others, not out of direct love towards them, but because of strong inner drive. However, this leaves the main character in a neglected state, slowly destroying their capability to progress and even drives away the people they worked so hard to please. If the companion is with them, their relationship turns borderline abusive, with completely one-sided "love". If the companion is gone, it ends up with exhaustion and burn-out at trying to improve the world, ultimately reaching neither the main character nor the world's goals. The main character should make this realization in the final cutscene, and lament their loneliness.
+
 A light green indicates a platonic friendship, which doesn't develop into romantic love. The player character does things for their companion, while taking care of their own mood and feelings. The game should provide a possibility to level up the companion speed by sacrificing one's mood permanently. However, when rarely used, one should end up with a light green ending, with them living their days happily as travellers with a love towards the world. When used a lot while staying at high mood, the player transitions to blue routes in the final days. When used a lot without staying at high mood, a dark green ending ensues. If the player starts caring for the world over their companion once the other starts being selfish or requiring game progression over altruism, the companion leaves. This light green variant ends with the main character realizing that it feels good to help others, finding balance between their actions and the world, and attains inner peace.
 
 
 
 Blue measures the level of results-orientedness. While aligned with rational choices, it is not exclusive towards the other two colors. However, being only blue means focusing on the gameplay elements more than the actual characters/story and the choices one makes. Neglecting the game for a long time can force one to gain a blue tint, as well as spending a lot of time optimizing items and money. Ditching the partner early (before realizing their significance) does not gain blue tint, but ditching them late does.
+
 A dark blue is someone who emotionlessly pursues direct goals and is willing to sacrifice anything to meet them. The companion will be left behind early. Managing to play the game like this without dying will give the greatest overall speed over time, and lead to the secret/bad/genocide-ish dark blue ending with lots of speed and breaking of the fourth wall, rendering the game permanently without the companion appearing. If the player manages to clear the game even under such harsh conditions, they have a choice of "resetting" and bringing the companion back to future playthroughs.
+
 A light blue is someone who is uplifting and happy to move forward, but also has some care for others and takes emotions into account while planning, leading to greater overall happiness for both them and everyone around. They will be friends with the companion, and lead them both to a life of abundance but no love or physical care for each other. The characters will see each other as strictly business partners, but find happiness from within and are content with the situation.
 
 
